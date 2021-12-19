@@ -1,0 +1,30 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | Dashboard{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+<h2><p><strong>Welcome {{user}}!</strong></p></h2>
+{% if guilds %}
+<h5><p>Select a Server to Manage</p></h5>
+	{% for guild in guilds %}
+		<a href="/dashboard/{{guild}}"> <img src="{{guilds[guild]['Icon']}}" alt="{{guilds[guild]['Name']}}'s Icon"> </a> <br>
+		<a class="admin-servers" href="/dashboard/{{guild}}">{{guilds[guild]["Name"]}}</a> <br>
+	{% endfor %}
+<br><br>
+{% endif %}
+<h5><p>Manage Your Personal Settings</p></h5>
+<a href="/dashboard/user/{{user_id}}"> <img src="{{user_avatar}}" alt="{{user}}'s Icon"> </a> <br>
+<a class="personal" href="/dashboard/user/{{user_id}}">{{user}}</a> <br>
+{% if admin %}
+<br><br>
+<h5><p>Manage the Site</p></h5>
+<a href="/post"> <img src="/public/images/Logo.png" width="128" height="128" alt="{{bot}}'s Icon"> </a> <br>
+<a class="personal" href="/post">Admin Settings</a> <br>
+{% endif %}
+<br>
+{% endblock %}

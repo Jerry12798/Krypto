@@ -1,0 +1,26 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | {{legend}} Post{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+<h2><p><strong>Admin Configuration!</strong></p></h2>
+<img src="/public/images/Logo.png" width="128" height="128" alt="{{bot}}'s Icon">
+
+<br><br><br>
+
+<strong><u>{{legend}} Announcement</u></strong>
+<form method="post">
+	<label for="pTitle">Announcement Title: </label><br>
+	<input type="text" id="pTitle" name="pTitle" placeholder="Enter Title" value="{{ post['Title'] }}" required><br>
+	<label for="pContent">Announcement Message: </label><br>
+	<textarea name="pContent" for="pContent" placeholder="Enter Announcement" required>{{ post['Message'] }}</textarea><br>
+	<input type="submit"><br>
+</form>
+<br>
+{% endblock %}

@@ -1,0 +1,617 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | Commands{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+<h2><p><strong><!--<a href="https://discord.com/oauth2/authorize?client_id=555820515965534208&scope=bot&permissions=2146958839">{{bot}}</a>-->{{bot}}'s Commands!</strong></p></h2>
+
+
+<h5><strong><u>General Commands</u></strong></h5>
+<strong>Report</strong>:
+<em>Sends Report to Servers Mod Log | </em> 
+<code>{{Bot_Prefix}}report &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Server Rank</strong>:
+<em>Sends your Current Server Rank with {{bot}} in Current Server or Checks Mentioned Member's Rank | </em>
+<code>{{Bot_Prefix}}rank or {{Bot_Prefix}}rank &ltMention Member&gt</code> <br>
+
+<strong>Global Rank</strong>:
+<em>Sends your Current Global Rank with {{bot}} or Checks Mentioned Member's Rank | </em>
+<code>{{Bot_Prefix}}grank or {{Bot_Prefix}}grank &ltMention Member&gt</code> <br>
+
+<strong>Votes</strong>:
+<em>Sends your Upvotes for {{bot}} or Checks Mentioned Member's Upvotes for {{bot}} | </em>
+<code>{{Bot_Prefix}}votes or {{Bot_Prefix}}votes &ltMention Member&gt</code> <br>
+
+<strong>Server Leaderboard</strong>:
+<em>Shows Top 500 Users on Server's Leaderboard | </em>
+<code>{{Bot_Prefix}}leaderboard or {{Bot_Prefix}}leaderboard &ltServer ID&gt</code> <br>
+
+<strong>Global Leaderboard</strong>:
+<em>Shows Top 500 Users on Global Leaderboard | </em>
+<code>{{Bot_Prefix}}gleaderboard</code> <br>
+
+<strong>Vote Leaderboard</strong>:
+<em>Shows Top 500 Users on Vote Leaderboard | </em>
+<code>{{Bot_Prefix}}vleaderboard</code> <br>
+
+<strong>Reminder</strong>:
+<em>Sets a Reminder for the Mentioned Message 
+(Days: d, Hours: h, Minutes: m, Seconds: s) | </em>
+<code>{{Bot_Prefix}}remind &ltAmount of Time&gt &ltReminder Message&gt</code> <br>
+
+<strong>Weather</strong>:
+<em>Sends the Weather of the Mentioned Zipcode | </em>
+<code>{{Bot_Prefix}}weather &ltZipcode&gt</code> <br>
+
+<strong>Word Definition</strong>:
+<em>Sends the Definition of the Mentioned Word | </em>
+<code>{{Bot_Prefix}}define &ltword&gt</code> <br>
+
+<strong>Urban Dictionary</strong>:
+<em>Sends the Definition from the Urban Dictionary of the Mentioned Word | </em>
+<code>{{Bot_Prefix}}udefine &ltword&gt</code> <br>
+
+<strong>Meme</strong>:
+<em>Sends a random Meme to the Current Channel | </em>
+<code>{{Bot_Prefix}}meme</code> <br>
+
+<strong>Akinator</strong>:
+<em>Start a Game of Akinator (Guess Your Character) | </em>
+<code>{{Bot_Prefix}}aki</code> <br>
+
+<strong>Phone</strong>:
+<em>Sends your Message to All Servers with Phone Setup | </em>
+<code>{{Bot_Prefix}}phone &ltCreate Message&gt</code> <br>
+
+<strong>Words of Wisdom (8-Ball)</strong>:
+<em>Sends Words of Wisdom to Answer Your Question | </em>
+<code>{{Bot_Prefix}}wisdom &ltYour Question&gt</code> <br>
+
+<strong>Dice Roll</strong>:
+<em>Rolls a Standard Dice with 6 Sides
+(You may include Number to Change the Amount of Sides however it's Not Required) | </em>
+<code>{{Bot_Prefix}}dice or {{Bot_Prefix}}dice &ltSides of Dice&gt</code> <br>
+
+<strong>Coin Flip</strong>:
+<em>Flips a Coin & Reveals the Side
+(You may include Your Guess however it's Not Required) | </em>
+<code>{{Bot_Prefix}}flip or {{Bot_Prefix}}flip &ltYour Guess&gt</code> <br>
+
+<strong>Rock Paper Scissors</strong>:
+<em>Play RPS with {{bot}}... Best 2 out of 3?
+(Paper->Rock->Scissors->Paper) | </em>
+<code>{{Bot_Prefix}}rps &ltYour Choice&gt</code> <br>
+
+<strong>Echo</strong>:
+<em>Sends your Message but in an Embed | </em>
+<code>{{Bot_Prefix}}echo &ltCreate Message&gt</code> <br>
+
+<strong>Advanced Echo Embed</strong>:
+<em>Sends your Title & Message in an Embed | </em>
+<code>{{Bot_Prefix}}aecho &ltCreate Title&gt &ltCreate Message&gt</code> <br>
+
+<strong>Clean Echo Embed</strong>:
+<em>Sends your Message in an Embed | </em>
+<code>{{Bot_Prefix}}cecho &ltCreate Message&gt</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Information Commands</u></strong></h5>
+<strong>Server Stats</strong>:
+<em>Sends Detailed Stats of Current Server or Mentioned Server | </em>
+<code>{{Bot_Prefix}}stats or {{Bot_Prefix}}stats &ltServer ID&gt</code> <br>
+
+<strong>Member Info</strong>:
+<em>Sends Detailed Information on You or Mentioned User | </em>
+<code>{{Bot_Prefix}}minfo or {{Bot_Prefix}}minfo &ltUser ID or Name&gt</code> <br>
+
+<strong>Channel Info</strong>:
+<em>Sends Detailed Information on Current Channel or Mentioned Channel | </em>
+<code>{{Bot_Prefix}}cinfo &ltChannel ID or Name&gt</code> <br>
+
+<strong>Role Info</strong>:
+<em>Sends Detailed Information on Mentioned Role | </em>
+<code>{{Bot_Prefix}}rinfo &ltRole ID or Name&gt</code> <br>
+
+<strong>Emoji Info</strong>:
+<em>Sends Unicode Information on an Emoji | </em>
+<code>{{Bot_Prefix}}uni &ltEmoji&gt</code> <br>
+
+<strong>Discord.py Lookup</strong>:
+<em>Sends Links of Search Results from Discord.py Documentation | </em>
+<code>{{Bot_Prefix}}rtd &ltDocument Reference&gt</code> <br>
+
+<strong>Python Lookup</strong>:
+<em>Sends Links of Search Results from Python Documentation | </em>
+<code>{{Bot_Prefix}}rtd py &ltDocument Reference&gt</code> <br>
+
+<strong>Bot Information</strong>:
+<em>Sends Information from Top.gg & Discord Bots for Mentioned Bot | </em>
+<code>{{Bot_Prefix}}about &ltBot ID&gt</code> <br>
+
+<strong>Signed iOS Versions</strong>:
+<em>Sends All iOS Versions currently beinged signed by Apple | </em>
+<code>{{Bot_Prefix}}signed or {{Bot_Prefix}}signed &ltDevice Type&gt</code> <br>
+
+<strong>iOS Tweak Lookup</strong>:
+<em>Sends Information about the Mentioned Tweak | </em>
+<code>{{Bot_Prefix}}tweak &ltTweak Name&gt</code> <br>
+
+<strong>CoC Player Info</strong>:
+<em>Sends Information on about Mentioned Clash of Clans Player Tag | </em>
+<code>{{Bot_Prefix}}pinfo &ltPlayer Tag&gt</code> <br>
+
+<strong>CoC Clan Info</strong>:
+<em>Sends Information on about Mentioned Clash of Clans Clan Tag | </em>
+<code>{{Bot_Prefix}}clan &ltClan Tag&gt</code> <br>
+
+<strong>Ping</strong>:
+<em>Sends {{bot}}'s Latency | </em>
+<code>{{Bot_Prefix}}ping</code> <br>
+
+<strong>{{bot}} Info</strong>:
+<em>Sends Detailed Information on {{bot}} | </em>
+<code>{{Bot_Prefix}}binfo</code> <br>
+
+<strong>Uptime</strong>:
+<em>Sends {{bot}}'s Uptime 
+(Amount of Time Online) | </em>
+<code>{{Bot_Prefix}}uptime</code> <br>
+
+<strong>Invite</strong>:
+<em>Sends Invite for {{bot}} & the Support Server | </em>
+<code{{Bot_Prefix}}invite</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Music Commands</u></strong></h5>
+<strong>Play</strong>:
+<em>Plays the Song you Mention 
+(You or {{bot}} must be Connected to a Voice Channel) | </em>
+<code>{{Bot_Prefix}}play &ltSong Name&gt</code> <br>
+
+<strong>Queue</strong>:
+<em>Adds Song you Mentioned to the Queue to be Played 
+({{bot}} must be Connected to a Voice Channel & Playing Music Already) | </em>
+<code>{{Bot_Prefix}}queue &ltSong Name&gt</code> <br>
+
+<strong>Join</strong>:
+<em>Connects {{bot}} to the Mentioned Voice Channel | </em>
+<code>{{Bot_Prefix}}join &ltVoice Channel Name&gt</code> <br>
+
+<strong>Pause</strong>:
+<em>Pauses the Music that is Currently being Played | </em>
+<code>{{Bot_Prefix}}pause</code> <br>
+
+<strong>Resume</strong>:
+<em>Resumes Playing the Music that is Paused | </em>
+<code>{{Bot_Prefix}}resume</code> <br>
+
+<strong>Skip</strong>:
+<em>Skips the Song that is Currently being Played | </em>
+<code>{{Bot_Prefix}}skip</code> <br>
+
+<strong>Stop</strong>:
+<em>Stops the Music that is Currently being Played & Disconnects {{bot}} from Voice Chat | </em>
+<code>{{Bot_Prefix}}stop</code> <br>
+
+<strong>Queue List</strong>:
+<em>Shows All Songs that is Currently in the Queue | </em>
+<code>{{Bot_Prefix}}queued</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Economy Commands</u></strong></h5>
+<strong>Bag</strong>:
+<em>Shows Mentioned Member or your Items in the Server | </em>
+<code>{{Bot_Prefix}}bag or {{Bot_Prefix}}bag &ltMention Member&gt</code> <br>
+
+<strong>Storage</strong>:
+<em>Shows Currency & Items in your or Mentioned Member's Storage | </em>
+<code>{{Bot_Prefix}}storage or {{Bot_Prefix}}storage &ltMention Member&gt</code> <br>
+
+<strong>Balance</strong>:
+<em>Shows Balance for you or Mentioned Member | </em>
+<code>{{Bot_Prefix}}balance or {{Bot_Prefix}}balance &ltMention Member&gt</code> <br>
+
+<strong>Server Balance</strong>:
+<em>Shows Balance of the Server | </em>
+<code>{{Bot_Prefix}}gbalance</code> <br>
+
+<strong>Shop</strong>:
+<em>Shows Shop for the Server or Mentioned Member | </em>
+<code>{{Bot_Prefix}}shop or {{Bot_Prefix}}shop &ltMention Member&gt</code> <br>
+
+<strong>Buy</strong>:
+<em>Purchase Item from Server Shop or Mentioned Member | </em>
+<code>{{Bot_Prefix}}buy &ltItem Index&gt or {{Bot_Prefix}}buy &ltItem Index&gt &ltMention Member&gt</code> <br>
+
+<strong>Daily Rewards</strong>:
+<em>Grants Random Amount of Currency every 24 hours | </em>
+<code>{{Bot_Prefix}}daily</code> <br>
+
+<strong>Selling</strong>:
+<em>Shows Shop for you or Mentioned Member | </em>
+<code>{{Bot_Prefix}}selling or &selling &ltMention Member&gt</code> <br>
+
+<strong>Sell</strong>:
+<em>Lists Item in your Shop for the given Price | </em>
+<code>{{Bot_Prefix}}sell &ltPrice&gt &ltItem Index&gt</code> <br>
+
+<strong>Remove Listing</strong>:
+<em>Removes Item from your Shop | </em>
+<code>{{Bot_Prefix}}rsell &ltItem Index&gt</code> <br>
+
+<strong>Clear Listings</strong>:
+<em>Clears All Items in your Shop | </em>
+<code>{{Bot_Prefix}}csell</code> <br>
+
+<strong>Transfer</strong>:
+<em>Transfers Currency from your Balance to Mentioned Member | </em>
+<code>{{Bot_Prefix}}transfer &ltAmount&gt &ltMention Member&gt</code> <br>
+
+<strong>Give</strong>:
+<em>Transfers Item from your Bag to Mentioned Member | </em>
+<code>{{Bot_Prefix}}give &ltItem Index&gt &ltMention Member&gt</code> <br>
+
+<strong>Deposit</strong>:
+<em>Deposit Currency into your Savings Account | </em>
+<code>{{Bot_Prefix}}deposit &ltAmount&gt</code> <br>
+
+<strong>Withdraw</strong>:
+<em>Withdraw Currency from Savings Account | </em>
+<code>{{Bot_Prefix}}withdraw &ltAmount&gt</code> <br>
+
+<strong>Store</strong>:
+<em>Removes Item from Bag and Adds it into your Storage Box | </em>
+<code>{{Bot_Prefix}}store &ltItem Index&gt</code> <br>
+
+<strong>Take</strong>:
+<em>Removes Item from Storage Box and Adds it into your Bag | </em>
+<code>{{Bot_Prefix}}take &ltItem Index&gt</code> <br>
+
+<strong>Drop</strong>:
+<em>Drops Item from your Bag | </em>
+<code>{{Bot_Prefix}}drop &ltItem Index&gt</code> <br>
+
+<strong>Apply</strong>:
+<em>Apply for an Account to use the Economy System | </em>
+<code>{{Bot_Prefix}}apply</code> <br>
+
+<strong>Rent</strong>:
+<em>Apply for a Savings Account & Security Box | </em>
+<code>{{Bot_Prefix}}rent</code> <br>
+
+<strong>Register</strong>:
+<em>Registers the Server to use the Economy System | </em>
+<code>{{Bot_Prefix}}register</code> <br>
+
+<strong>Admin Deposit</strong>:
+<em>Deposits Currency from to Mentioned Member | </em>
+<code>{{Bot_Prefix}}udeposit &ltAmount&gt &ltMention Member&gt</code> <br>
+
+<strong>Admin Withdraw</strong>:
+<em>Withdrawa Currency from Mentioned Member | </em>
+<code>{{Bot_Prefix}}uwithdraw &ltAmount&gt &ltMention Member&gt</code> <br>
+
+<strong>Item</strong>:
+<em>Adds Item to Server Shop for the given Price | </em>
+<code>{{Bot_Prefix}}item &ltPrice&gt &ltItem Index&gt</code> <br>
+
+<strong>Remove Item</strong>:
+<em>Removes Item from Server Shop | </em>
+<code>{{Bot_Prefix}}ritem &ltItem Index&gt</code> <br>
+
+<strong>Clear Shop</strong>:
+<em>Clears All Items in Server Shop | </em>
+<code>{{Bot_Prefix}}cshop</code> <br>
+
+<strong>Bag Limit</strong>:
+<em>Sets the Limit for Bag Storage | </em>
+<code>{{Bot_Prefix}}lbag &ltAmount&gt</code> <br>
+
+<strong>Security Box Limit</strong>:
+<em>Sets the Limit for Security Box Storage | </em>
+<code>{{Bot_Prefix}}lbox &ltAmount&gt</code> <br>
+
+<strong>Server Start Balance</strong>:
+<em>Sets the Starting Amount of Currency for the Server | </em>
+<code>{{Bot_Prefix}}sstart &ltAmount&gt</code> <br>
+
+<strong>User Start Balance</strong>:
+<em>Sets the Starting Amount of Currency for New Member's for the Server | </em>
+<code>{{Bot_Prefix}}ustart &ltAmount&gt</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Vouch Commands</u></strong></h5>
+<strong>Check Vouches</strong>:
+<em>Shows Mentioned Member or Your Vouches | </em>
+<code>{{Bot_Prefix}}vouches &ltMention Member&gt</code> <br>
+
+<strong>Vouch</strong>:
+<em>Sends Vouch for Mentioned Member to Vouch Queue for Approval | </em>
+<code>{{Bot_Prefix}}vouch &ltMention Member&gt &ltVouch Description&gt</code> <br>
+
+<strong>Revouch</strong>:
+<em>Revouches for a Vouch you Submitted | </em>
+<code>{{Bot_Prefix}}revouch &ltVouch ID&gt &ltVouch Description&gt</code> <br>
+
+<strong>Add Profile Link</strong>:
+<em>Sets Your Profile's Shop Link | </em>
+<code>{{Bot_Prefix}}vlink &ltShop URL&gt</code> <br>
+
+<strong>Add Profile Banner</strong>:
+<em>Sets Your Profile's Banner | </em>
+<code>{{Bot_Prefix}}vbanner &ltBanner URL&gt</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Bump Commands</u></strong></h5>
+<strong>Bump</strong>:
+<em>Bumps Server in {{bot}}'s Support Server and All Servers with Bump Setup 
+(Server's Description, & Server's Invite Before you can Successfully Bump) | </em>
+<code>{{Bot_Prefix}}bump</code> <br>
+
+<strong>Bumpset Description</strong>:
+<em>Sets Servers Bump Description | </em>
+<code>{{Bot_Prefix}}sdescription &ltCreate Description&gt</code> <br>
+
+<strong>Bumpset Invite</strong>:
+<em>Sets Servers Bump Invite | </em>
+<code>{{Bot_Prefix}}sinvite &ltInvite Link&gt</code> <br>
+
+<strong>Bumpset Banner</strong>:
+<em>Sets Servers Bump Banner | </em>
+<code>{{Bot_Prefix}}sbanner &ltBanner URL&gt</code> <br>
+
+<strong>Bumpset</strong>:
+<em>Sets Channel to Receive Bump Feed in | </em>
+<code>{{Bot_Prefix}}bumpset &ltMention Channel&gt</code> <br>
+
+<strong>Preview</strong>:
+<em>Shows Preview of Current Server's Bump Advertisement | </em>
+<code>{{Bot_Prefix}}spreview</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Moderation Commands</u></strong></h5>
+<strong>Clear</strong>:
+<em>Deletes Specified Amount of Messages | </em>
+<code>{{Bot_Prefix}}clear &ltNumber of Messages&gt</code> <br>
+
+<strong>Warn</strong>:
+<em>Warns Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}warn &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Warnings</strong>:
+<em>Shows Warnings for Mentioned User | </em>
+<code>{{Bot_Prefix}}warnings &ltMention User&gt</code> <br>
+
+<strong>Remove Warning</strong>:
+<em>Removes Specified Warning from Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}rwarn &ltMention User&gt &ltWarning Index&gt &ltReason&gt</code> <br>
+
+<strong>Clear Warnings</strong>:
+<em>Clears Warnings from Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}cwarn &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Mute</strong>:
+<em>Adds Muted Role to Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}mute &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Unmute</strong>:
+<em>Removes Muted Role from Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}unmute &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Timed Mute</strong>:
+<em>Adds Muted Role to Mentioned User for Specified Specified Time & Reason 
+(Days: d, Hours: h, Minutes: m, Seconds: s) | </em>
+<code>{{Bot_Prefix}}tmute &ltAmount of Time&gt &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Kick</strong>:
+<em>Kicks Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}kick &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Ban</strong>:
+<em>Bans Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}ban &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Soft Ban</strong>:
+<em>Soft Bans Mentioned User for Specified Reason | </em>
+<code>{{Bot_Prefix}}sban &ltMention User&gt &ltReason&gt</code> <br>
+
+<strong>Add Role</strong>:
+<em>Adds Mentioned Role to Mentioned User | </em>
+<code>{{Bot_Prefix}}arole &ltMention Role&gt &ltMention User&gt</code> <br>
+
+<strong>Remove Role</strong>:
+<em>Removes Mentioned Role from Mentioned User | </em>
+<code>{{Bot_Prefix}}rrole &ltMention Role&gt &ltMention User&gt</code> <br>
+
+<strong>Mass Add Role</strong>:
+<em>Adds Mentioned Role to All Members | </em>
+<code>{{Bot_Prefix}}marole &ltMention Role&gt</code> <br>
+ 
+<strong>Mass Remove Role</strong>:
+<em>Removes Mentioned Role from All Members | </em>
+<code>{{Bot_Prefix}}mrrole &ltMention Role&gt</code> <br>
+
+<strong>Ping Role</strong>:
+<em>Sends your Message in an Embed & Pings the Mentioned Role | </em>
+<code>{{Bot_Prefix}}prole &ltMention Role&gt &ltCreate Message&gt</code> <br>
+
+<strong>Hire Role Message</strong>:
+<em>Sets Message for Hire Role | </em>
+<code>{{Bot_Prefix}}hrole &ltMention Role&gt &ltCreate Message&gt</code> <br>
+
+<strong>Hire</strong>:
+<em>Sends Configured Message for Role to Mentioned Member | </em>
+<code>{{Bot_Prefix}}hire &ltMention Role&gt &ltMention Member&gt</code> <br>
+
+<strong>Rolemenu</strong>:
+<em>Rolemenu that Users React to get Corresponding Role 
+(Up to 10 Roles) | </em>
+<code>{{Bot_Prefix}}rolemenu &ltMenu Name&gt &ltMention Role 1&gt &ltMention Role 2&gt</code> <br>
+
+<strong>Poll</strong>:
+<em>Creates Poll for Users to Vote On 
+(Up to 10 Answers) | </em>
+<code>{{Bot_Prefix}}poll &ltPoll Name&gt &ltChoice 1&gt &ltChoice 2&gt</code> <br>
+
+<strong>Giveaway</strong>:
+<em>Starts Giveaway in Mentioned Channel for Specified Amount of Time with Specified Amount of Winners for the Specified Prize 
+(Days: d, Hours: h, Minutes: m, Seconds: s) 
+(The Prize Description is Optional) (You Must put Quotes Before & After 2 or More Word Prizes) | </em>
+<code>{{Bot_Prefix}}giveaway &ltMention Channel&gt &ltAmount of Time&gt &ltAmount of Winners&gt &ltPrize&gt &ltPrize Description&gt</code> <br>
+
+<strong>End Giveaway</strong>:
+<em>Ends the Specified Giveaway | </em>
+<code>{{Bot_Prefix}}gend &ltGiveaway Message ID&gt</code> <br>
+
+<strong>Reroll Giveaway</strong>:
+<em>Rerolls the Specified Giveaway | </em>
+<code>{{Bot_Prefix}}reroll &ltGiveaway Message ID&gt &ltAmount to Reroll&gt</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Auto-Moderation Commands</u></strong></h5>
+<strong>Auto-Mod (Bad Words)</strong>:
+<em>Turns On Bad Words Auto-Moderation for Channel 
+(If On it will turn Off in Channel) | </em>
+<code>{{Bot_Prefix}}bwords &ltMention Channel&gt</code> <br>
+
+<strong>Auto-Mod (Invites)</strong>:
+<em>Turns On Discord Invite Auto-Moderation for Channel 
+(If On it will turn Off in Channel) | </em>
+<code>{{Bot_Prefix}}invites &ltMention Channel&gt</code> <br>
+
+<strong>Auto-Mod (Links)</strong>:
+<em>Turns On External Link Auto-Moderation for Channel 
+(If On it will turn Off in Channel) | </em>
+<code>{{Bot_Prefix}}links &ltMention Channel&gt</code> <br>
+
+<strong>Auto-Mod (Mentions)</strong>:
+<em>Turns On Spam Mention Auto-Moderation for Channel 
+(If On it will turn Off in Channel) | </em>
+<code>{{Bot_Prefix}}mentions &ltMention Channel&gt</code> <br>
+
+<strong>Auto-Mod (Caps)</strong>:
+<em>Turns On Excessive Caps Auto-Moderation for Channel 
+(If On it will turn Off in Channel) | </em>
+<code>{{Bot_Prefix}}caps &ltMention Channel&gt</code> <br>
+
+<strong>Auto-Role</strong>:
+<em>Sets Role to Auto-Assign on Join 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}autorole &ltMention Role&gt</code> <br>
+
+<strong>Welcome Message</strong>:
+<em>Sets Welcome Message 
+(Mention Member: %mention, Member Username: %member, Server Name: %server) 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}wmessage &ltCreate Message&gt</code> <br>
+
+<strong>Welcome Direct Message</strong>:
+<em>Sets Welcome Direct Message 
+(Mention Member: %mention, Member Username: %member, Server Name: %server) 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}dmessage &ltCreate Message&gt</code> <br>
+
+<strong>Goodbye Message</strong>:
+<em>Sets Goodbye Message 
+(Mention Member: %mention, Member Username: %member, Server Name: %server) 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}gmessage &ltCreate Message&gt</code> <br>
+
+<strong>Information Message & Channel</strong>:
+<em>Sets the Channel & Information Message 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}info &ltMention Channel&gt &ltCreate Message&gt</code> <br>
+
+<strong>Information Limit Role</strong>:
+<em>Sets Limit for Messages per 24 Hours for Mentioned Role in Information Channels 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}set &ltAmount of Message&gt &ltMention Role&gt</code> <br>
+<br><br>
+
+
+
+<h5><strong><u>Configuration Commands</u></strong></h5>
+<strong>Prefix</strong>:
+<em>Adds or Removes Prefix from Server's Prefixes | </em>
+<code>{{Bot_Prefix}}prefix &ltCreate Prefix&gt</code> <br>
+
+<strong>Mod Log</strong>:
+<em>Sets the Channel to Receive Moderation Actions Taken 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}log &ltMention Channel&gt</code> <br>
+
+<strong>Join & Leave Log</strong>:
+<em>Sets Channel to Receive Join & Leave Logs 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}welcome &ltMention Channel&gt</code> <br>
+
+<strong>Information Channel Logs</strong>:
+<em>Sets the Channel to Receive Information Channel Advertisement Logs in 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}ilog &ltMention Channel&gt</code> <br>
+
+<strong>Level System Message</strong>:
+<em>Enables Server Leveling System Mesages 
+(If Enabled it will Disable Level Up Messages) | </em>
+<code>{{Bot_Prefix}}levels</code> <br>
+
+<strong>Global Level System Message</strong>:
+<em>Enables Global Leveling System Mesages 
+(If Enabled it will Disable Level Up Messages) | </em>
+<code>{{Bot_Prefix}}glevels</code> <br>
+
+<strong>Muted Role</strong>:
+<em>Sets Muted Role 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}muted &ltMention Role&gt</code> <br>
+
+<strong>Phone Call Channel</strong>:
+<em>Sets Channel to Receive Phone Calls in 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}psetup &ltMention Channel&gt</code> <br>
+
+<strong>Reset</strong>:
+<em>Resets Information Channel Limits for the Server | </em>
+<code>{{Bot_Prefix}}reset</code> <br>
+
+<strong>Member Reset</strong>:
+<em>Resets Information Channel Limits for a Member in the Server | </em>
+<code>{{Bot_Prefix}}mreset &ltMention Member&gt</code> <br>
+
+<strong>Member Remove</strong>:
+<em>Removes Specified Number of Posts from Information Channel Limit for a Member in the Server | </em>
+<code>{{Bot_Prefix}}mremove &ltAmount to Remove&gt &ltMention Member&gt</code> <br>
+
+<strong>iOS Updates</strong>:
+<em>Sets Channel to Receive iOS Updates in 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}iupdates &ltMention Channel&gt</code> <br>
+
+<strong>{{bot}} Announcements</strong>:
+<em>Sets Channel to Receive {{bot}}'s Announcements in 
+(If Enabled it will Disable) | </em>
+<code>{{Bot_Prefix}}updates &ltMention Channel&gt</code> <br>
+<br><br>
+
+{% endblock %}

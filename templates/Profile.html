@@ -1,0 +1,26 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | {{user}}{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+<h2><p><strong>{{user}}'s Dashboard!</strong></p></h2>
+<img src="{{user_avatar}}" alt="{{username}}'s Icon">
+
+<br><br><br>
+
+<strong><u>Vouch Configuration</u></strong>
+<form method="post">
+	<label for="vBanner">Vouch Profile Banner: </label>
+	<input type="url" id="vBanner" name="vBanner" placeholder="Enter URL to Banner" value="{% if data['vBanner'] %}{{ data['vBanner'] }}{% endif %}"><br>
+	<label for="vLink">Vouch Profile Link: </label>
+	<input type="url" id="vLink" name="vLink" placeholder="Enter Profile Link URL" value="{% if data['vLink'] %}{{ data['vLink'] }}{% endif %}"><br>
+	<input type="submit"><br>
+</form>
+<br>
+{% endblock %}

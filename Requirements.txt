@@ -1,0 +1,12 @@
+asyncpraw
+coc.py
+discord.py[voice]
+easy_pil
+lxml
+motor
+psutil
+pytz
+quart
+requests_oauthlib
+topggpy
+youtube_dl

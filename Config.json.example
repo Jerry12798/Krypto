@@ -1,0 +1,47 @@
+{
+	"Bot_Prefix": "Enter the Bot's Prefix Here",
+	"Bot_Token": "Enter the Bot's Token Here",
+	"Bot_Name": "Enter the Bot's Name Here",
+	"Bot_ID": "Enter the Bot's Client/User ID Here",
+
+	"OAUTH2_CLIENT_ID": Enter_OAUTH2_Client_ID_Here,
+	"OAUTH2_CLIENT_SECRET": "Enter OAUTH2 Client Secret Here",
+	"OAUTH2_REDIRECT_URI": "Enter OAUTH2 URI Here As Entered in Discord Dev Portal | http://HOST_IP:5000/auth or https://example.com/auth",
+
+	"Your_Username": "Enter Your Username or the Server Name in which is Responsible for the Bot Here",
+	"Owners": [Enter_Owner_IDs_Here],
+	"Support_Staff_Role_ID": Enter_Staff_Role_ID_Here,
+	"Mod_Mail_Channel": Enter_Mod_Mail_ID_Here,
+	"Vote_Log": Enter_Vote_Log_ID_Here,
+	"Vouch_Queue" : Enter_Vouch_Queue_Channel_ID_Here,
+	"Announcement_Channel": Enter_Announcement_Channel_ID_Here,
+	"Bot_Support_Server": "Enter Permanent Invite to Support Server Here",
+
+	"User_Start": Enter_Default_User_Start_Balance_Here,
+	"Guild_Start": Enter_Default_Server_Start_Balance_Here,
+	"Bag_Limit": Enter_Default_User_Bag_Limit_Here,
+	"Box_Limit": Enter_Default_Security_Box_Limit_Here,
+
+	"IPC_Key": "Create Secret Key for IPC Server",
+	"IPC_Header": "Create Header for IPC Server/Dashboard",
+
+	"MongoDB_Client": "Enter MongoDB Connection String Here",
+
+	"TOPGG_Token": "Enter TopGG API Token Here",
+	"TOPGG_Vote_Link": "Enter Bot's TopGG Vote Link Here",
+	"TOPGG_Secret": "Enter Secret for TopGG Webhook",
+	"DBL_Token": "Enter Discord Bot List API Token Here",
+	"DBL_Vote_Link": "Enter Bot's Discord Bot List Vote Link Here",
+	"DBL_Secret": "Enter Secret for Discord Bot List Webhook",
+	"DB_Token": "Enter Discord Bots API Token Here",
+
+	"Reddit_Client_ID": "Enter Reddit Client ID Here",
+	"Reddit_Client_Secret": "Enter Reddit Client Secret Here",
+	"Reddit_Username": "Enter Reddit Username Here",
+	"Reddit_Password": "Enter Reddit Password Here$",
+	"Reddit_User_Agent": "Enter Reddit User Agent Here",
+
+	"CoC_Email": "Enter Clash of Clans API Email Here",
+	"CoC_Pass": "Enter Clash of Clans API Password Here",
+	"CoC_Key_Name": "Enter Clash of Clans API Key Name Here"
+}

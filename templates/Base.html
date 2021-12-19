@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="height=device-height,width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"> 
+	<link rel="apple-touch-icon" sizes="180x180" href="/public/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/public/images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/public/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/public/images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="msapplication-config" content="/public/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<h1 style="margin: 0;"><strong>{{IPC_Header}}</strong></h1>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c2eed;">
+	  <a class="navbar-brand" style="color: #28a9e0;" href="/"><img src="/public/images/Logo.png" width="30" height="30" class="d-inline-block align-top"> <strong>{{bot}}</strong></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #2cc0de;">
+	    <span class="navbar-toggler-icon" style="background-color: #2cc0de;"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item">
+	        <a class="nav-link" href="/dashboard">Dashboard</a><span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/commands">Commands</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Premium</a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Profile
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #1768d1;">
+	          <a class="dropdown-item" href="/login">Login</a>
+	          <a class="dropdown-item" href="/logout">Logout</a>
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<div class="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+	<footer class="footer">
+		Designed & Developed by <a href="https://discordapp.com/users/414227652178870282/">&nbsp;Anonymous Jerry#4513&nbsp;</a> | <a href="https://discordapp.com/oauth2/authorize?client_id={{bot_id}}&permissions=8&scope=bot">&nbsp;Invite {{bot}}&nbsp;</a> | <a href="{{Bot_Support_Server}}">&nbsp;Join Our Support Server&nbsp;</a> | © 2021, All Rights Reserved.<br>
+	</footer>
+</body>
+<html>
