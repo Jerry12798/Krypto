@@ -36,9 +36,9 @@ async def make_rank_card(exp, lvl, rank, member, global_rank=False):
 	avatar = Editor(pfp).resize((250, 250)).circle_image()
 
 	# Grab Font(s)
-	clip_large = Font("public/css/fonts/Clip.ttf").poppins(size=50)
-	clip = Font("public/css/fonts/Clip.ttf").poppins(size=40)
-	clip_small = Font("public/css/fonts/Clip.ttf").poppins(size=30)
+	clip_large = Font("public/css/fonts/Clip.ttf", size=50).font
+	clip = Font("public/css/fonts/Clip.ttf", size=40).font
+	clip_small = Font("public/css/fonts/Clip.ttf", size=30).font
 
 	# Add Avatar to Background
 	background.paste(avatar.image, (10, 25))
@@ -73,9 +73,9 @@ async def make_welcome_card(member, position="N/A"):
 	avatar = Editor(pfp).resize((200, 200)).circle_image()
 
 	# Grab Font(s)
-	clip_large = Font("public/css/fonts/Clip.ttf").poppins(size=50)
-	clip = Font("public/css/fonts/Clip.ttf").poppins(size=40)
-	clip_small = Font("public/css/fonts/Clip.ttf").poppins(size=30)
+	clip_large = Font("public/css/fonts/Clip.ttf", size=50).font
+	clip = Font("public/css/fonts/Clip.ttf", size=40).font
+	clip_small = Font("public/css/fonts/Clip.ttf", size=30).font
 
 	# Add Avatar to Background
 	background.paste(avatar.image, (365, 10))
