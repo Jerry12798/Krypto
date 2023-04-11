@@ -1,0 +1,203 @@
+<!-- 会用用，不会用垃圾吧倒 -->
+
+<!DOCTYPE html>
+<html>
+<header>
+	<title>Krypto</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/element-ui@2.15.7/lib/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://krypto.codes/public/css/IMGUI.css">
+</header>
+
+<body>
+	<div id="app">
+		<div :class="!ifshow?'onlyTitle ayimgui':'ayimgui'" ref="menuMain">
+			<div class="aytitle" @touchstart="titleTouchStart" @touchmove="titleTouchMove">
+				<i :class="ifshow?'el-icon-caret-bottom':'el-icon-caret-top'" @click="ifshow = !ifshow"></i>
+				<span class="title-age" style="margin-left:5px;">Krypto | ARK Mobile</span>
+				<i class="titleClose el-icon el-icon-close" @click="closeimgui"></i>
+			</div>
+			<div class="aybody">
+				<div class="aytab">
+					<span @click="changeTab('ESP')"
+						:style="{background:tabValue==='ESP'?'#B1CEF0':'#BDC7D0'}">ESP</span>
+					<span @click="changeTab('Aim')"
+						:style="{background:tabValue==='Aim'?'#B1CEF0':'#BDC7D0'}">Aim</span>
+					<span @click="changeTab('Misc')"
+						:style="{background:tabValue==='Misc'?'#B1CEF0':'#BDC7D0'}">Misc</span>
+					<span @click="changeTab('Spam')"
+						:style="{background:tabValue==='Spam'?'#B1CEF0':'#BDC7D0'}">Spam</span>
+					<span @click="changeTab('Testing/Experimental')"
+						:style="{background:tabValue==='Testing/Experimental'?'#B1CEF0':'#BDC7D0'}">Testing/Experimental</span>
+				</div>
+
+				<div v-show="tabValue==='ESP'">
+					<!--<el-select v-model="activeSelect" size="mini" style="width:70%" popper-class="onlySelect"
+						placeholder="">
+						<el-option v-for="item in selectOption" :key="item.value" :label="item.label"
+							:value="item.value">
+						</el-option>
+					</el-select>
+					<span>Dupe</span>-->
+
+					Toggle ESP: 
+                    <label class="switch">
+                        <input type="checkbox" onclick="draw()">
+                        <span class="slider round"></span>
+                    </label>
+					Tamed ESP: <input type="checkbox" onclick="toggleDino()">
+					Wild ESP: <input type="checkbox" onclick="toggleWild()">
+                	<br>
+					Sleeping/Dead ESP: <input type="checkbox" onclick="toggleSleeping()">
+					Structure ESP: <input type="checkbox" onclick="toggleStructure()">
+					<!--<p style="color: black;">ESP Range: <input type="checkbox" onclick="toggleDistance()"></p>-->
+					<p style="color: black;">ESP Distance: <span id="disSlideValue" style="color: black;">300</span></p>
+                    <input type="range" min="25" max="500" value="300" id="mySlide" onchange="disVal = this.value; alert(`ESP Range Changed to ${this.value}!`)" oninput="disSlideValue.innerText = this.value">
+
+					<!--<el-checkbox onclick="draw()">Toggle ESP</el-checkbox>
+					<el-checkbox onclick="toggleDino()">Tamed Dino ESP</el-checkbox>
+					<el-checkbox onclick="toggleWild()">Wild Dino ESP</el-checkbox>
+					<el-checkbox onclick="toggleSleeping()">Sleeping Player ESP</el-checkbox>
+					<el-checkbox onclick="toggleStructure()">Structure ESP</el-checkbox>
+					<el-checkbox onclick="toggleDistance()">ESP Range</el-checkbox>-->
+
+					<br>
+					<br>
+
+					<!--<div class="aycollapse" @click="showOption = !showOption" style="cursor:pointer">
+						<i :class="showOption?'el-icon-caret-bottom':'el-icon-caret-right'"></i>
+						<span>ESP options</span>
+					</div>
+					<el-collapse-transition>
+						<div v-show="showOption">This is some useful text.</div>
+					</el-collapse-transition>-->
+				</div>
+
+				<div v-show="tabValue === 'Aim'">
+					Aimlock: <input type="checkbox" onclick="Aimlock()">
+					Bullet Tracking: <input type="checkbox" onclick="toggleTrack()">
+					Underwater Shoot: <input type="checkbox" onclick="underwaterShoot()">
+                	<br>
+					<!--Big Head: <input type="checkbox" onclick="bigHead()">-->
+					<p style="color: black;">Big Head: <span id="bhSlideValue" style="color: black;">1</span></p>
+                    <input type="range" min="1" max="30" value="1" id="mySlide" onchange="BH(bhVal, this.value); bhVal = this.value; alert(`Big Head Changed to ${this.value}!`)" oninput="bhSlideValue.innerText = this.value">
+                	<br>
+					<!--Big Body: <input type="checkbox" onclick="toggleDistance()">-->
+					<p style="color: black;">Big Body: <span id="bbSlideValue" style="color: black;">1</span></p>
+                    <input type="range" min="1" max="30" value="1" id="mySlide" onchange="BB(bbVal, this.value); bbVal = this.value; alert(`Big Body Changed to ${this.value}!`)" oninput="bbSlideValue.innerText = this.value">
+                	<br>
+					Antenna: <input type="checkbox" onclick="antenna()">
+
+					<!--<el-checkbox onclick="Aimlock()">Aimlock</el-checkbox>
+					<el-checkbox onclick="toggleTrack()">Bullet Tracking</el-checkbox>
+					<el-checkbox onclick="underwaterShoot()">Underwater Shoot</el-checkbox>
+					<el-checkbox onclick="bigHead()">Big Head</el-checkbox>
+					<el-checkbox onclick="antenna()">Antenna</el-checkbox>
+					<el-checkbox onclick="bigBody()">Big Body</el-checkbox>-->
+
+					<br>
+					<br>
+				</div>
+
+				<div v-show="tabValue === 'Misc'">
+					<!--Character Speed: <input type="checkbox" onclick="playerSpeed()">-->
+					<p style="color: black;">Character Speed: <span id="csSlideValue" style="color: black;">1</span></p>
+                    <input type="range" min="1" max="10" value="1" id="mySlide" onchange="CS(csVal, this.value); csVal = this.value; alert(`Character Speed Changed to ${this.value}!`)" oninput="csSlideValue.innerText = this.value">
+                	<br>
+					<!--World Speed: <input type="checkbox" onclick="worldSpeed()">-->
+					<p style="color: black;">World Speed: <span id="wsSlideValue" style="color: black;">1</span></p>
+                    <input type="range" min="1" max="10" value="1" id="mySlide" onchange="WS(wsVal, this.value); wsVal = this.value; alert(`World Speed Changed to ${this.value}!`)" oninput="wsSlideValue.innerText = this.value">
+                	<br>
+					<!--FOV (Field of View): <input type="checkbox" onclick="fov()">-->
+					<p style="color: black;">FOV (Field of View): <span id="fovSlideValue" style="color: black;">90</span></p>
+                    <input type="range" min="25" max="199" value="90" id="mySlide" onchange="FOV(fovVal, this.value); fovVal = this.value; alert(`FOV Changed to ${this.value}!`)" oninput="fovSlideValue.innerText = this.value">
+                	<br>
+					<!--POV (Point of View): <input type="checkbox" onclick="pov()">-->
+					<p style="color: black;">POV (Point of View): <span id="povSlideValue" style="color: black;">1</span></p>
+                    <input type="range" min="1" max="10" value="1" id="mySlide" onchange="POV(povVal, this.value); povVal = this.value; alert(`POV Changed to ${this.value}!`)" oninput="povSlideValue.innerText = this.value">
+                	<br>
+					Clear Land: <input type="checkbox" onclick="clearLand()">
+					Clear Land: <input type="checkbox" onclick="clearWater()">
+					<br>
+					<!--Night Vision: <input type="checkbox" onclick="nightVision()">-->
+					<p style="color: black;">Night Vision: <span id="nvSlideValue" style="color: black;">1</span></p>
+                    <input type="range" min="1" max="10" value="1" id="mySlide" onchange="NV(nvVal, this.value); nvVal = this.value; alert(`Night Vision Changed to ${this.value}!`)" oninput="nvSlideValue.innerText = this.value">
+                	<br>
+					Dungeon Vision: <input type="checkbox" onclick="dungeonVision()">
+					X-Ray Vision: <input type="checkbox" onclick="xrayVision()">
+					<br>
+					Lag Switch: <input type="checkbox" onclick="lagSwitch()">
+					FPS Counter: <input type="checkbox" onclick="toggleFPS()">
+                	<br>
+					Character Color Palatte: <input type="checkbox" onclick="playerColor()">
+					<br>
+        			Dupe: <input type="checkbox" onclick="toggleDupe()"> <button onclick="setStruct()">Set Dupe Item ID</button>
+					
+
+					<!--<el-checkbox onclick="playerSpeed()">Character Speed</el-checkbox>
+					<el-checkbox onclick="worldSpeed()">World Speed</el-checkbox>
+					<el-checkbox onclick="fov()">FOV (Field of View)</el-checkbox>
+					<el-checkbox onclick="pov()">POV (Point of View)</el-checkbox>
+					<el-checkbox onclick="clearLand()">Clear Land</el-checkbox>
+					<el-checkbox onclick="clearWater()">Clear Water</el-checkbox>
+					<el-checkbox onclick="nightVision()">Night Vision</el-checkbox>
+					<el-checkbox onclick="dungeonVision()">Dungeon Vision</el-checkbox>
+					<el-checkbox onclick="xrayVision()">X-Ray Vision</el-checkbox>
+					<el-checkbox onclick="lagSwitch()">Lag Switch</el-checkbox>
+					<el-checkbox onclick="toggleFPS()">FPS Counter</el-checkbox>
+					<el-checkbox onclick="playerColor()">Character Color Palatte</el-checkbox>
+					<br> <el-button onclick="setStruct()"> Set Dupe ID</el-button>
+					<el-checkbox onclick="toggleDupe()">Dupe</el-checkbox> <br>-->
+
+					<br>
+					<br>
+				</div>
+
+				<div v-show="tabValue === 'Spam'">
+					RT Spam: <input type="checkbox" onclick="RT()">
+					Pistol Spam: <input type="checkbox" onclick="pistol()">
+					Sniper Spam: <input type="checkbox" onclick="fabSniper()">
+                	<br>
+					AR Spam: <input type="checkbox" onclick="AR()">
+					Shotgun Spam: <input type="checkbox" onclick="shotty()">
+					RPG Spam: <input type="checkbox" onclick="RPG()">
+
+					<!--<el-checkbox onclick="RT()">RT Spam</el-checkbox>
+					<el-checkbox onclick="pistol()">Pistol Spam</el-checkbox>
+					<el-checkbox onclick="fabSniper()">Sniper Spam</el-checkbox>
+					<el-checkbox onclick="AR()">AR Spam</el-checkbox>
+					<el-checkbox onclick="shotty()">Shotgun Spam</el-checkbox>
+					<el-checkbox onclick="RPG()">RPG Spam</el-checkbox>-->
+
+					<br>
+					<br>
+				</div>
+
+				<div v-show="tabValue === 'Testing/Experimental'">
+					Ghost Mode: <input type="checkbox" onclick="ghostMode()">
+                    <!--<br>
+                    <p style="color: black;">TEST: 
+                      <label class="switch">
+                          <input type="checkbox" onclick="">
+                          <span class="slider round"></span>
+                      </label>
+                    </p>
+			        <br>
+			        <p style="color: black;">Test: <input type="checkbox" onclick="toggleDino()"></p>
+			        <br>
+                    <p style="color: black;">Testing</p>
+                    <input type="range" min="1" max="100" value="50" id="mySlide" onchange="sVal = this.value; alert(`Value Changed to ${this.value}!`)" oninput="slideValue.innerText = this.value">
+                    <p style="color: black;">Slider Value: <span id="slideValue" style="color: black;">50</span></p>-->
+
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

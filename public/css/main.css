@@ -1,0 +1,130 @@
+@font-face { font-family: "clipregular";
+	src: url('/public/css/fonts/clip-webfont.woff2') format('woff2'),
+		 url('/public/css/fonts/clip-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal; }
+
+@media screen and (max-width: 880px) {
+	footer.footer {
+		font-size: 1.83vw;
+	}
+}
+	
+html { height: 100%; } 
+
+body { height: 100%;
+	display: flex; 
+	flex-direction: column; }
+
+footer { display: flex; 
+	background-color: #0c2eed; 
+	color: #28a9e0;
+	position: fixed; 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+	height: 30px; 
+	width: 100%; 
+	min-width: 855;
+	text-align: center;
+	justify-content: center; }
+
+a { color: #00ffd9; }
+
+h1 { font-family: 'clipregular';
+	color: #28a9e0;
+	background-color: #170a8c;
+	text-align: center; }
+	
+p { color: #0c2eed; }
+
+code { color: #1768d1; }
+
+button { background-color: #170a8c ;
+	color: #00ddff;
+	border-color: #0c2eed ; }
+
+input { background-color: #1768d1;
+	color: #00ddff;
+	margin: 0;
+	border-color: #0c2eed; }
+
+textarea { background-color: #1768d1;
+	color: #00ddff;
+	margin: 0;
+	border-color: #0c2eed;
+	height: 185px;
+	width: 370px; }
+
+select { background-color: #1768d1;
+	color: #00ddff; }
+
+/*Filter-Option Removes Arrow for Dropdown*/
+div.filter-option { background-color: #1768d1;
+	color: #00ddff; }
+
+div.dropdown-menu { background-color: #170a8c; }
+
+/*Trying to Hide Scrollbar on Multi-Select*/
+/*div.dropdown.bootstrap-select.show-tick.show div.dropdown-menu.show div.inner.show { overflow: hidden;
+	overflow-y: hidden; }*/
+
+ul.dropdown-menu.inner.show { background-color: #170a8c;
+	color: #00ddff; }
+
+ul.dropdown-menu.inner.show li.no-results { background: #1768d1; }
+
+input.form-control, input.form-control:focus { background-color: #00ddff; }
+
+a.dropdown-item { background-color: #1768d1;
+	color: #00ddff; }
+
+button.btn.dropdown-toggle.bs-placeholder.btn-light { border: 0;
+	padding: 0; }
+
+strong.Post-Title { color: #0c2eed }
+
+strong.Post-Content { color: #0c2eed;
+	white-space: pre-line; }
+
+em.Timestamp { color: #0c2eed }
+
+em.User { color: #0c2eed }
+
+button.btn.btn-primary { background-color: #eb4034 }
+
+button.close { color: #eb4034 }
+
+div.Announcements { text-align: center; }
+
+h5#DeleteModalLabel.modal-title { color: #00ddff }
+
+div.modal-header { background-color: #170a8c }
+
+div.modal-body { background-color: #00ddff }
+
+div.modal-footer { background-color: #170a8c }
+
+.content { flex: 1 0 auto;
+	color: #0c2eed;
+	background-color: #00ddff;
+	text-align: center;
+	overflow: auto;
+	padding-bottom: 30px; }
+
+.footer { flex-shrink: 0; }
+
+.admin-servers { font-size: 25px; }
+
+.personal { font-size: 25px; }
+
+.nav-link { font-family: 'clipregular'; }
+
+.navbar-brand { font-family: 'clipregular'; }
+
+::placeholder { color: #00ddff;
+  opacity: 1; }
+
+:-ms-input-placeholder { color: #00ddff; }
+
+::-ms-input-placeholder { color: #00ddff; }

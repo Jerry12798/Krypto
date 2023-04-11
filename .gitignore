@@ -1,0 +1,8 @@
+__pycache__/
+public/tmp/*
+!public/tmp/.gitkeep
+templates/tmp/*
+!templates/tmp/.gitkeep
+Test/
+Config.json
+Tester.py

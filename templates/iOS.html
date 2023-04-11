@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Krypto</title>
+        <link rel="stylesheet" type="text/css" href="https://krypto.codes/public/css/h5gg.css"> 
+    </head>
+
+    <body>
+        <!--悬浮菜单-->
+        <!--Floating Menu-->
+        <div class="popup_container">
+            <div id="H5AlertView">
+                <div id="content-view">
+                    <div id="title-text">Krypto</div>
+                    <div id="info-text">ARK Mobile</div>
+                    <div id="features-text">
+                    <button type="button" class="collapsible">ESP</button>
+                    <div class="content">
+                        <button onclick="draw()" style="display: block;">Toggle ESP</button>
+                        <button onclick="toggleDino()" style="display: block;">Tamed Dino ESP</button>
+                        <button onclick="toggleWild()" style="display: block;">Wild Dino ESP</button>
+                        <button onclick="toggleSleeping()" style="display: block;">Sleeping Player ESP</button>
+                        <button onclick="toggleStructure()" style="display: block;">Structure ESP</button>
+                        <button onclick="toggleDistance()" style="display: block;">ESP Range</button>
+                    </div>
+                    <button type="button" class="collapsible">Aim</button>
+                    <div class="content">
+                        <button onclick="Aimlock()" style="display: block;">Toggle Aimlock</button>
+                        <button onclick="toggleTrack()" style="display: block;">Toggle Bullet Tracking</button>
+                        <button onclick="underwaterShoot()" style="display: block;">Underwater Shoot</button>
+                        <button onclick="bigHead()" style="display: block;">Big Head</button>
+                        <button onclick="antenna()" style="display: block;">Antenna</button>
+                        <button onclick="bigBody()" style="display: block;">Big Body</button>
+                    </div>
+                    <button type="button" class="collapsible">Misc</button>
+                    <div class="content">
+                        <button onclick="toggleDupe()" style="display: block;">Dupe</button>
+                        <button onclick="setStruct()" style="display: block;">Set Dupe Item ID</button>
+                        <button onclick="playerSpeed()" style="display: block;">Character Speed</button>
+                        <button onclick="worldSpeed()" style="display: block;">World Speed</button>
+                        <button onclick="fov()" style="display: block;">FOV (Field of View)</button>
+                        <button onclick="pov()" style="display: block;">Drone View</button>
+                        <button onclick="clearLand()" style="display: block;">Clear Land</button>
+                        <button onclick="clearWater()" style="display: block;">Clear Water</button>
+                        <button onclick="nightVision()" style="display: block;">Night Vision</button>
+                        <button onclick="dungeonVision()" style="display: block;">Dungeon Vision</button>
+                        <button onclick="xrayVision()" style="display: block;">X-Ray Vision</button>
+                        <button onclick="lagSwitch()" style="display: block;">Lag Switch</button>
+                        <button onclick="toggleFPS()" style="display: block;">FPS Counter</button>
+                        <button onclick="playerColor()" style="display: block;">Character Color Palatte</button>
+                    </div>
+                    <button type="button" class="collapsible">Spam</button>
+                    <div class="content">
+                        <button onclick="RT()" style="display: block;">RT Spam</button>
+                        <button onclick="pistol()" style="display: block;">Pistol Spam</button>
+                        <button onclick="fabSniper()" style="display: block;">Sniper Spam</button>
+                        <button onclick="AR()" style="display: block;">AR Spam</button> 
+                        <button onclick="shotty()" style="display: block;">Shotgun Spam</button>
+                        <button onclick="RPG()" style="display: block;">RPG Spam</button>
+                    </div>
+                    <button type="button" class="collapsible">Testing/Experimental</button>
+                    <div class="content">
+                        <button onclick="ghostMode()" style="display: block;">Ghost Mode</button>
+                        <p style="color: blue;";>TEST: 
+                          <label class="switch">
+                              <input type="checkbox" onclick="">
+                              <span class="slider round"></span>
+                          </label>
+                        </p>
+                        <br>
+                        <p style="color: blue;";>Test: <input type="checkbox" onclick=""></p>
+                        <br>
+                        <p style="color: blue;";>Testing</p>
+                        <input type="range" min="1" max="100" value="50" id="mySlide" onchange="sVal = this.value; alert(`Value Changed to ${this.value}!`)" oninput="slideValue.innerText = this.value">
+                        <p style="color: blue;";>Slider Value: <span id="slideValue" style="color: blue;">50</span></p>
+                    </div>
+                    <button onclick="hideMenu()">Hide Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

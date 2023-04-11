@@ -1,0 +1,48 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | News & Updates{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+<h2><p><strong class="Post-Title"><u>{{ post['Title'] }}</u></strong></p></h2>
+<a class="Announcements" href="https://discordapp.com/users/{{post['Member']}}}}"><em class="User"><strong>Posted by:</strong> <img src="{{ post['Avatar'] }}" width="20" height="20"> {{ post['Member_Name'] }}</em></a><br>
+<em class="Timestamp">{{ post['Timestamp'].strftime('%B %d, %Y %Z %I:%M%p (UTC)') }}</em>
+
+<br><br><br>
+
+<div class="Announcements">
+	<h5><strong class="Post-Content">{{ post['Message'] }}</strong></h5><br>
+</div>
+<br><br>
+{% if admin %}
+	<a class="Announcements" href="/news/{{ post['_id'] }}/edit"><button type="button" value="Edit" class="Edit-Post">Edit</button></a>
+	<button formmethod="post" type="button" value="Delete" class="Delete-Post" data-toggle="modal" data-target="#DeleteModal">Delete</button>
+	<div class="modal fade" id="DeleteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="DeleteModalLabel">Confirm Deletion</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <h5>Are you sure you want to delete this?</h5>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <a class="Announcements" href="/news/{{ post['_id'] }}/delete"><button type="button" class="btn btn-primary">Delete</button></a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+{% endif %}
+
+
+
+<br><br>
+{% endblock %}

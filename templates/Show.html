@@ -1,0 +1,24 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | HTML Converter{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+<h2><p><strong>HTML Viewer</strong></p></h2>
+
+<br><br><br>
+
+{% if data %}
+	<div class="Display Data">
+		<video controls>
+			<source src="/{{ data['filename'] }}" type="video/{{ data['ext'] }}">
+		</video>
+	</div>
+{% endif %}
+<br>
+{% endblock %}

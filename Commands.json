@@ -1,0 +1,1249 @@
+{
+	"(1/2) General Commands":
+		{
+			"Report": 
+				{
+					"Description": "Sends Report to Servers Mod Log",
+					"Invoke": ["report <Mention User> <Reason>"],
+					"Emoji": "mailbox",
+					"Info": [""]
+				},
+			"Server Rank": 
+				{
+					"Description": "Sends Your or Mentioned Member's Rank with %bot in Current Server",
+					"Invoke": ["rank", "rank <Mention User>"],
+					"Emoji": "space_invader",
+					"Info": [""]
+				},
+			"Global Rank": 
+				{
+					"Description": "Sends your Current Global Rank with %bot or Checks Mentioned Member's Rank",
+					"Invoke": ["grank", "grank <Mention User>"],
+					"Emoji": "globe_with_meridians",
+					"Info": [""]
+				},
+			"Server Leaderboard": 
+				{
+					"Description": "Shows Top 500 Users on Server's Leaderboard",
+					"Invoke": ["leaderboard", "leaderboard <Server ID>"],
+					"Emoji": "beginner",
+					"Info": [""]
+				},
+			"Global Leaderboard": 
+				{
+					"Description": "Shows Top 500 Users on Global Leaderboard",
+					"Invoke": ["gleaderboard"],
+					"Emoji": "fleur_de_lis",
+					"Info": [""]
+				},
+			"Vote Leaderboard": 
+				{
+					"Description": "Shows Top 500 Users on Vote Leaderboard",
+					"Invoke": ["vleaderboard"],
+					"Emoji": "card_box",
+					"Info": [""]
+				},
+			"Reminder": 
+				{
+					"Description": "Sets a Reminder for the Mentioned Message",
+					"Invoke": ["remind <Amount of Time> <Reminder Message>"],
+					"Emoji": "alarm_clock",
+					"Info": ["Days: d, Hours: h, Minutes: m, Seconds: s"]
+				},
+			"Weather": 
+				{
+					"Description": "Sends the Weather of the Mentioned Zipcode",
+					"Invoke": ["weather <Zipcode>"],
+					"Emoji": "white_sun_small_cloud",
+					"Info": [""]
+				},
+			"Word Definition": 
+				{
+					"Description": "Sends the Definition of the Mentioned Word",
+					"Invoke": ["define <Word>"],
+					"Emoji": "books",
+					"Info": [""]
+				},
+			"Urban Dictionary": 
+				{
+					"Description": "Sends the Definition from the Urban Dictionary of the Mentioned Word",
+					"Invoke": ["udefine <Word>"],
+					"Emoji": "scroll",
+					"Info": [""]
+				},
+			"Translate":
+				{
+					"Description": "Translates Message or Text with Google Translator",
+					"Invoke": ["translate <Text to Translate>", "translate <Language to Translate to> <Text tor Translate>"],
+					"Emoji": "speech_balloon",
+					"Info": [""]
+				},
+			"Meme": 
+				{
+					"Description": "Sends a random Meme to the Current Channel",
+					"Invoke": ["meme"],
+					"Emoji": "rofl",
+					"Info": [""]
+				}
+		},
+
+	"(2/2) General Commands":
+		{
+			"Akinator": 
+				{
+					"Description": "Start a Game of Akinator (Guess Your Character)",
+					"Invoke": ["aki"],
+					"Emoji": "man_genie",
+					"Info": [""]
+				},
+			"Google Search":
+				{
+					"Description": "Searches Google for Your Query",
+					"Invoke": ["google <Search Query>"],
+					"Emoji": "scroll",
+					"Info": [""]
+				},
+			"Website Screenshot":
+				{
+					"Description": "Sends Screenshot of the Mentioned Website",
+					"Invoke": ["ss <Website URL>", "ss <Website URL> <Delay Time>"],
+					"Emoji": "camera",
+					"Info": [""]
+				},
+			"TikTok Download":
+				{
+					"Description": "Downloads & Displays Mentioned TikTok Video",
+					"Invoke": ["tiktok <Video URL>"],
+					"Emoji": "arrow_down",
+					"Info": [""]
+				},
+			"Video & Song Downloader":
+				{
+					"Description": "Downloads & Displays Specified Song or Video",
+					"Invoke": ["ytdl <Video/Song URL>"],
+					"Emoji": "arrow_double_down",
+					"Info": [""]
+				},
+			"ASCII Art":
+				{
+					"Description": "Create ASCII Art of Your or Specified Member's Avatar or for Attached Photo",
+					"Invoke": ["ascii <Scale of ASCII> <Gray Scale of ASCII> <Width Correction>"],
+					"Emoji": "art",
+					"Info": [""]
+				},
+			"Phone": 
+				{
+					"Description": "Sends your Message to All Servers with Phone Setup",
+					"Invoke": ["phone <Create Message>"],
+					"Emoji": "telephone",
+					"Info": [""]
+				},
+			"Words of Wisdom (8-Ball)": 
+				{
+					"Description": "Sends Words of Wisdom to Answer Your Question",
+					"Invoke": ["wisdom <Create Question>"],
+					"Emoji": "crystal_ball",
+					"Info": [""]
+				},
+			"Dice Roll": 
+				{
+					"Description": "Rolls a Standard Dice with 6 Sides",
+					"Invoke": ["dice", "dice <Sides of Dice>"],
+					"Emoji": "game_die",
+					"Info": ["(You may include Number to Change the Amount of Sides however it's Not Required)"]
+				},
+			"Coin Flip": 
+				{
+					"Description": "Flips a Coin & Reveals the Side",
+					"Invoke": ["flip <Your Guess>"],
+					"Emoji": "moyai",
+					"Info": ["(You may include Your Guess however it's Not Required)"]
+				},
+			"Rock Paper Scissors": 
+				{
+					"Description": "Play RPS with %bot... Best 2 out of 3?",
+					"Invoke": ["rps <Your Choice>"],
+					"Emoji": "scissors",
+					"Info": ["(Paper->Rock->Scissors->Paper)"]
+				},
+			"Echo": 
+				{
+					"Description": "Sends your Message but in an Embed",
+					"Invoke": ["echo <Create Message>"],
+					"Emoji": "clipboard",
+					"Info": [""]
+				},
+			"Advanced Echo Embed": 
+				{
+					"Description": "Sends your Title & Message in an Embed",
+					"Invoke": ["aecho <Create Title> <Create Message>"],
+					"Emoji": "file_folder",
+					"Info": [""]
+				},
+			"Clean Echo Embed": 
+				{
+					"Description": "Sends your Message in an Embed",
+					"Invoke": ["cecho <Create Message>"],
+					"Emoji": "speech_balloon",
+					"Info": [""]
+				}
+		},
+
+	"(1/2) Information Commands":
+		{
+			"Server Stats": 
+				{
+					"Description": "Sends Detailed Stats of Current Server or Mentioned Server",
+					"Invoke": ["stats", "stats <Server ID>"],
+					"Emoji": "satellite",
+					"Info": [""]
+				},
+			"Member Info": 
+				{
+					"Description": "Sends Detailed Information on You or Mentioned User",
+					"Invoke": ["minfo", "minfo <User ID or Name>"],
+					"Emoji": "page_facing_up",
+					"Info": [""]
+				},
+			"Channel Info": 
+				{
+					"Description": "Sends Detailed Information on Current Channel or Mentioned Channel",
+					"Invoke": ["cinfo <Channel ID or Name>"],
+					"Emoji": "tv",
+					"Info": [""]
+				},
+			"Role Info": 
+				{
+					"Description": "Sends Detailed Information on Mentioned Role",
+					"Invoke": ["rinfo <Role ID or Name>"],
+					"Emoji": "alien",
+					"Info": [""]
+				},
+			"Emoji Info": 
+				{
+					"Description": "Sends Unicode Information on an Emoji",
+					"Invoke": ["uni <Emoji>"],
+					"Emoji": "money_mouth",
+					"Info": [""]
+				},
+			"Discord.py Lookup": 
+				{
+					"Description": "Sends Links of Search Results from Discord.py Documentation",
+					"Invoke": ["rtd <Document Reference>"],
+					"Emoji": "microscope",
+					"Info": [""]
+				},
+			"Python Lookup": 
+				{
+					"Description": "Sends Links of Search Results from Python Documentation",
+					"Invoke": ["rtd py <Document Reference>"],
+					"Emoji": "snake",
+					"Info": [""]
+				},
+			"%bot Info": 
+				{
+					"Description": "Sends Detailed Information on %bot",
+					"Invoke": ["binfo"],
+					"Emoji": "robot",
+					"Info": [""]
+				},
+			"Signed iOS Versions": 
+				{
+					"Description": "Sends All iOS Versions currently beinged signed by Apple",
+					"Invoke": ["signed", "signed <Device Type>"],
+					"Emoji": "apple",
+					"Info": [""]
+				},
+			"iOS Tweak Lookup": 
+				{
+					"Description": "Sends Information about the Mentioned Tweak",
+					"Invoke": ["tweak <Tweak Name>"],
+					"Emoji": "tools",
+					"Info": [""]
+				},
+			"iOS Updates": 
+				{
+					"Description": "Sets Channel to Receive iOS Updates in",
+					"Invoke": ["iupdates <Mention Channel>"],
+					"Emoji": "bell",
+					"Info": ["(If Enabled it will Disable)"]
+				}
+		},
+
+	"(2/2) Information Commands":
+		{
+			"Pokemon Go Events": 
+				{
+					"Description": "Shows All Current & Upcoming Pokemon Go Events",
+					"Invoke": ["pogo"],
+					"Emoji": "feet",
+					"Info": [""]
+				},
+			"Pokemon Go Updates": 
+				{
+					"Description": "Sets Channel to Receive Pokemon Go Event Updates in",
+					"Invoke": ["pupdates <Mention Channel>"],
+					"Emoji": "ticket",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"CoC Player Info": 
+				{
+					"Description": "Sends Information on about Mentioned Clash of Clans Player Tag",
+					"Invoke": ["pinfo <Player Tag>"],
+					"Emoji": "crossed_swords",
+					"Info": [""]
+				},
+			"CoC Clan Info": 
+				{
+					"Description": "Sends Information on about Mentioned Clash of Clans Clan Tag",
+					"Invoke": ["clan <Clan Tag>"],
+					"Emoji": "beginner",
+					"Info": [""]
+				},
+			"Ping": 
+				{
+					"Description": "Sends %bot's Latency",
+					"Invoke": ["ping"],
+					"Emoji": "ping_pong",
+					"Info": [""]
+				},
+			"Bot Information": 
+				{
+					"Description": "Sends Information from Top.gg & Discord Bots for Mentioned Bot",
+					"Invoke": ["about <Bot ID>"],
+					"Emoji": "robot",
+					"Info": [""]
+				},
+			"Votes": 
+				{
+					"Description": "Sends your Upvotes for %bot or Checks Mentioned Member's Upvotes for %bot",
+					"Invoke": ["votes", "votes <Mention User>"],
+					"Emoji": "ballot_box",
+					"Info": [""]
+				},
+			"Uptime": 
+				{
+					"Description": "Sends %bot's Uptime",
+					"Invoke": ["uptime"],
+					"Emoji": "chart_with_upwards_trend",
+					"Info": ["(Amount of Time Online)"]
+				},
+			"Invite": 
+				{
+					"Description": "Sends Invite for %bot & the [Support Server](<%support_server>)",
+					"Invoke": ["invite"],
+					"Emoji": "link",
+					"Info": [""]
+				},
+			"Server Account Information":
+				{
+					"Description": "Shows Information About Current Server's Subscription Account",
+					"Invoke": ["account", "account <Mention Member>"],
+					"Emoji": "bust_in_silhouette",
+					"Info": [""]
+				},
+			"Link Server Account":
+				{
+					"Description": "Links Your Server Subscription Account to Your Discord Account",
+					"Invoke": ["link <Email Address>"],
+					"Emoji": "lock",
+					"Info": [""]
+				}
+		},
+
+	"Music Commands":
+		{
+			"Play": 
+				{
+					"Description": "Plays the Song you Mention",
+					"Invoke": ["play <Song Name>"],
+					"Emoji": "arrow_forward",
+					"Info": ["(You or %bot must be Connected to a Voice Channel)"]
+				},
+			"Queue": 
+				{
+					"Description": "Adds Song you Mentioned to the Queue to be Played",
+					"Invoke": ["queue <Song Name>"],
+					"Emoji": "arrow_double_down",
+					"Info": ["(%bot must be Connected to a Voice Channel & Playing Music Already)"]
+				},
+			"Join": 
+				{
+					"Description": "Connects %bot to the Mentioned Voice Channel",
+					"Invoke": ["join <Voice Channel Name>"],
+					"Emoji": "twisted_rightwards_arrows",
+					"Info": [""]
+				},
+			"Pause": 
+				{
+					"Description": "Pauses the Music that is Currently being Played",
+					"Invoke": ["pause"],
+					"Emoji": "pause_button",
+					"Info": [""]
+				},
+			"Resume": 
+				{
+					"Description": "Resumes Playing the Music that is Paused",
+					"Invoke": ["resume"],
+					"Emoji": "play_pause",
+					"Info": [""]
+				},
+			"Skip": 
+				{
+					"Description": "Skips the Song that is Currently being Played",
+					"Invoke": ["skip"],
+					"Emoji": "next_track",
+					"Info": [""]
+				},
+			"Stop": 
+				{
+					"Description": "Stops the Music that is Currently being Played & Disconnects %bot from Voice Chat",
+					"Invoke": ["stop"],
+					"Emoji": "stop_button",
+					"Info": [""]
+				},
+			"Queue List": 
+				{
+					"Description": "Shows All Songs that is Currently in the Queue",
+					"Invoke": ["queued"],
+					"Emoji": "information_source",
+					"Info": [""]
+				},
+			"Download": 
+				{
+					"Description": "Creates a MP3 Download for Specified Song",
+					"Invoke": ["mp3 <Song Name>"],
+					"Emoji": "arrow_down",
+					"Info": [""]
+				}
+		},
+
+	"(1/2) Economy Commands":
+		{
+			"Bag": 
+				{
+					"Description": "Shows Mentioned Member or your Items in the Server",
+					"Invoke": ["bag", "bag <Mention Member>"],
+					"Emoji": "handbag",
+					"Info": [""]
+				},
+			"Storage": 
+				{
+					"Description": "Shows Currency & Items in your or Mentioned Member's Storage",
+					"Invoke": ["storage", "storage <Mention Member>"],
+					"Emoji": "file_cabinet",
+					"Info": [""]
+				},
+			"Balance": 
+				{
+					"Description": "Shows Balance for you or Mentioned Member",
+					"Invoke": ["balance", "balance <Mention Member>"],
+					"Emoji": "credit_card",
+					"Info": [""]
+				},
+			"Server Balance": 
+				{
+					"Description": "Shows Balance of the Server",
+					"Invoke": ["gbalance"],
+					"Emoji": "classical_building",
+					"Info": [""]
+				},
+			"Shop": 
+				{
+					"Description": "Shows Shop for the Server or Mentioned Member",
+					"Invoke": ["shop", "shop <Mention Member>"],
+					"Emoji": "shopping_cart",
+					"Info": [""]
+				},
+			"Buy": 
+				{
+					"Description": "Purchase Item from Server Shop or Mentioned Member",
+					"Invoke": ["buy <Item Index>", "buy <Item Index> <Mention Member>"],
+					"Emoji": "moneybag",
+					"Info": [""]
+				},
+			"Daily Rewards": 
+				{
+					"Description": "Grants Random Amount of Currency every 24 hours",
+					"Invoke": ["daily"],
+					"Emoji": "confetti_ball",
+					"Info": [""]
+				},
+			"Selling": 
+				{
+					"Description": "Shows Shop for you or Mentioned Member",
+					"Invoke": ["selling", "selling <Mention Member>"],
+					"Emoji": "scroll",
+					"Info": [""]
+				},
+			"Sell": 
+				{
+					"Description": "Lists Item in your Shop for the given Price",
+					"Invoke": ["sell <Price> <Item Index>"],
+					"Emoji": "money_with_wings",
+					"Info": [""]
+				},
+			"Remove Listing": 
+				{
+					"Description": "Removes Item from your Shop",
+					"Invoke": ["rsell <Item Index>"],
+					"Emoji": "x",
+					"Info": [""]
+				},
+			"Clear Listings": 
+				{
+					"Description": "Clears All Items in your Shop",
+					"Invoke": ["csell"],
+					"Emoji": "wastebasket",
+					"Info": [""]
+				},
+			"Transfer": 
+				{
+					"Description": "Transfers Currency from your Balance to Mentioned Member",
+					"Invoke": ["transfer <Amount> <Mention Member>"],
+					"Emoji": "gem",
+					"Info": [""]
+				},
+			"Give": 
+				{
+					"Description": "Transfers Item from your Bag to Mentioned Member",
+					"Invoke": ["give <Item Index> <Mention Member>"],
+					"Emoji": "gift",
+					"Info": [""]
+				},
+			"Deposit": 
+				{
+					"Description": "Deposit Currency into your Savings Account",
+					"Invoke": ["deposit <Amount>"],
+					"Emoji": "heavy_plus_sign",
+					"Info": [""]
+				},
+			"Withdraw": 
+				{
+					"Description": "Withdraw Currency from Savings Account",
+					"Invoke": ["withdraw <Amount>"],
+					"Emoji": "heavy_minus_sign",
+					"Info": [""]
+				},
+			"Store": 
+				{
+					"Description": "Removes Item from Bag and Adds it into your Storage Box",
+					"Invoke": ["store <Item Index>"],
+					"Emoji": "inbox_tray",
+					"Info": [""]
+				},
+			"Take": 
+				{
+					"Description": "Removes Item from Storage Box and Adds it into your Bag",
+					"Invoke": ["take <Item Index>"],
+					"Emoji": "outbox_tray",
+					"Info": [""]
+				},
+			"Drop": 
+				{
+					"Description": "Drops Item from your Bag",
+					"Invoke": ["drop <Item Index>"],
+					"Emoji": "put_litter_in_its_place",
+					"Info": [""]
+				}
+		},
+
+	"(2/2) Economy Commands":
+		{
+			"Apply": 
+				{
+					"Description": "Apply for an Account to use the Economy System",
+					"Invoke": ["apply"],
+					"Emoji": "pencil",
+					"Info": [""]
+				},
+			"Rent": 
+				{
+					"Description": "Apply for a Savings Account & Security Box",
+					"Invoke": ["rent"],
+					"Emoji": "stopwatch",
+					"Info": [""]
+				},
+			"Register": 
+				{
+					"Description": "Registers the Server to use the Economy System",
+					"Invoke": ["register"],
+					"Emoji": "ballot_box",
+					"Info": [""]
+				},
+			"Admin Deposit": 
+				{
+					"Description": "Deposits Currency from to Mentioned Member",
+					"Invoke": ["udeposit <Amount> <Mention Member>"],
+					"Emoji": "heavy_plus_sign",
+					"Info": [""]
+				},
+			"Admin Withdraw": 
+				{
+					"Description": "Withdraws Currency from Mentioned Member",
+					"Invoke": ["uwithdraw <Amount> <Mention Member>"],
+					"Emoji": "heavy_minus_sign",
+					"Info": [""]
+				},
+			"Item": 
+				{
+					"Description": "Adds Item to Server Shop for the given Price",
+					"Invoke": ["item <Price> <Item>"],
+					"Emoji": "package",
+					"Info": [""]
+				},
+			"Remove Item": 
+				{
+					"Description": "Removes Item from Server Shop",
+					"Invoke": ["ritem <Item Index>"],
+					"Emoji": "bomb",
+					"Info": [""]
+				},
+			"Clear Shop": 
+				{
+					"Description": "Clears All Items in Server Shop",
+					"Invoke": ["cshop"],
+					"Emoji": "recycle",
+					"Info": [""]
+				},
+			"Bag Limit": 
+				{
+					"Description": "Sets the Limit for Bag Storage",
+					"Invoke": ["lbag <Amount>"],
+					"Emoji": "lock_with_ink_pen",
+					"Info": [""]
+				},
+			"Security Box Limit": 
+				{
+					"Description": "Sets the Limit for Security Box Storage",
+					"Invoke": ["lbox <Amount>"],
+					"Emoji": "closed_lock_with_key",
+					"Info": [""]
+				},
+			"Server Start Balance": 
+				{
+					"Description": "Sets the Starting Amount of Currency for the Server",
+					"Invoke": ["sstart <Amount>"],
+					"Emoji": "satellite",
+					"Info": [""]
+				},
+			"User Start Balance": 
+				{
+					"Description": "Sets the Starting Amount of Currency for New Member's for the Server",
+					"Invoke": ["ustart <Amount>"],
+					"Emoji": "busts_in_silhouette",
+					"Info": [""]
+				}
+		},
+
+	"Ticket Commands":
+		{
+			"Ticket Category":
+				{
+					"Description": "Sets Category to Receive Tickets in",
+					"Invoke": ["tcategory <Mention Category>"],
+					"Emoji": "file_cabinet",
+					"Info": [""]
+				},
+			"Ticket Message":
+				{
+					"Description": "Sets Ticket Panel Message",
+					"Invoke": ["tmessage <Ticket Panel Name> <Ticket Panel Message>"],
+					"Emoji": "speech_balloon",
+					"Info": [""]
+				},
+			"Ticket Support Roles":
+				{
+					"Description": "Sets Support Roles for Tickets",
+					"Invoke": ["trole <Mention Role>"],
+					"Emoji": "busts_in_silhouette",
+					"Info": [""]
+				},
+			"Create Ticket":
+				{
+					"Description": "Creates Ticket Creator in Specified Channel",
+					"Invoke": ["ticket <Mention Channel> <Ticket Panel Name>"],
+					"Emoji": "envelope_with_arrow",
+					"Info": [""]
+				}
+		},
+
+	"Vouch Commands":
+		{
+			"Check Vouches": 
+				{
+					"Description": "Shows Mentioned Member or Your Vouches",
+					"Invoke": ["vouches", "vouches <Mention Member>"],
+					"Emoji": "scroll",
+					"Info": [""]
+				},
+			"Vouch": 
+				{
+					"Description": "Sends Vouch for Mentioned Member to Vouch Queue for Approval",
+					"Invoke": ["vouch <Mention Member> <Vouch Description>"],
+					"Emoji": "white_check_mark",
+					"Info": [""]
+				},
+			"Revouch": 
+				{
+					"Description": "Revouches for a Vouch you Submitted",
+					"Invoke": ["revouch <Vouch ID> <Vouch Description>"],
+					"Emoji": "repeat",
+					"Info": [""]
+				},
+			"Add Profile Link": 
+				{
+					"Description": "Sets Your Profile's Shop Link",
+					"Invoke": ["vlink <Shop URL>"],
+					"Emoji": "link",
+					"Info": [""]
+				},
+			"Add Profile Bannner": 
+				{
+					"Description": "Sets Your Profile's Banner",
+					"Invoke": ["vbanner <Banner URL>"],
+					"Emoji": "flag_white",
+					"Info": [""]
+				}
+		},
+
+	"Bump Commands":
+		{
+			"Bump": 
+				{
+					"Description": "Bumps Server in [%bot's Support Server](<%support_server>) and All Servers with Bump Setup",
+					"Invoke": ["bump"],
+					"Emoji": "satellite",
+					"Info": ["(Must Set Server's Description, & Server's Invite Before you can Successfully Bump)"]
+				},
+			"Bumpset Description": 
+				{
+					"Description": "Sets Server's Bump Description",
+					"Invoke": ["sdescription <Create Description>"],
+					"Emoji": "page_facing_up",
+					"Info": [""]
+				},
+			"Bumpset Invite": 
+				{
+					"Description": "Sets Server's Bump Invite",
+					"Invoke": ["sinvite <Invite Link>"],
+					"Emoji": "link",
+					"Info": [""]
+				},
+			"Bumpset Banner": 
+				{
+					"Description": "Sets Server's Bump Banner",
+					"Invoke": ["sbanner <Banner URL>"],
+					"Emoji": "flag_white",
+					"Info": [""]
+				},
+			"Bumpset": 
+				{
+					"Description": "Sets Channel to Receive Bump Feed in",
+					"Invoke": ["bumpset <Mention Channel>"],
+					"Emoji": "clipboard",
+					"Info": [""]
+				},
+			"Preview": 
+				{
+					"Description": "Shows Preview of Current Server's Bump Advertisement",
+					"Invoke": ["spreview"],
+					"Emoji": "scroll",
+					"Info": [""]
+				}
+		},
+
+	"(1/2) Moderation Commands":
+		{
+			"Clear": 
+				{
+					"Description": "Deletes Specified Amount of Messages",
+					"Invoke": ["clear <Amount of Messages>"],
+					"Emoji": "wastebasket",
+					"Info": [""]
+				},
+			"Warn": 
+				{
+					"Description": "Warns Mentioned User for Specified Reason",
+					"Invoke": ["warn <Mention User> <Reason>"],
+					"Emoji": "no_entry_sign",
+					"Info": [""]
+				},
+			"Warnings": 
+				{
+					"Description": "Shows Warnings for Mentioned User",
+					"Invoke": ["warnings <Mention User>"],
+					"Emoji": "pencil",
+					"Info": [""]
+				},
+			"Remove Warnings": 
+				{
+					"Description": "Removes Specified Warning from Mentioned User for Specified Reason",
+					"Invoke": ["rwarn <Mention User> <Warning Index> <Reason>"],
+					"Emoji": "warning",
+					"Info": [""]
+				},
+			"Clear Warnings": 
+				{
+					"Description": "Clears Warnings from Mentioned User for Specified Reason",
+					"Invoke": ["cwarn <Mention User> <Reason>"],
+					"Emoji": "white_check_mark",
+					"Info": [""]
+				},
+			"Mute": 
+				{
+					"Description": "Adds Muted Role to Mentioned User for Specified Reason",
+					"Invoke": ["mute <Mention User> <Reason>"],
+					"Emoji": "zipper_mouth",
+					"Info": [""]
+				},
+			"Unmute": 
+				{
+					"Description": "Removes Muted Role from Mentioned User for Specified Reason",
+					"Invoke": ["unmute <Mention User> <Reason>"],
+					"Emoji": "open_mouth",
+					"Info": [""]
+				},
+			"Timed Mute": 
+				{
+					"Description": "Adds Muted Role to Mentioned User for Specified Specified Time & Reason",
+					"Invoke": ["tmute <Amount of Time> <Mention User> <Reason>"],
+					"Emoji": "alarm_clock",
+					"Info": ["Days: d, Hours: h, Minutes: m, Seconds: s"]
+				},
+			"Kick": 
+				{
+					"Description": "Kicks Mentioned User for Specified Reason",
+					"Invoke": ["kick <Mention User> <Reason>"],
+					"Emoji": "mans_shoe",
+					"Info": [""]
+				},
+			"Ban": 
+				{
+					"Description": "Bans Mentioned User for Specified Reason",
+					"Invoke": ["ban <Mention User> <Reason>"],
+					"Emoji": "lock",
+					"Info": [""]
+				},
+			"Soft Ban": 
+				{
+					"Description": "Soft Bans Mentioned User for Specified Reason",
+					"Invoke": ["sban <Mention User> <Reason>"],
+					"Emoji": "unlock",
+					"Info": [""]
+				}
+		},
+
+	"(2/2) Moderation Commands":
+		{
+			"Add Role": 
+				{
+					"Description": "Adds Mentioned Role to Mentioned User",
+					"Invoke": ["arole <Mention Role> <Mention User>"],
+					"Emoji": "heavy_plus_sign",
+					"Info": [""]
+				},
+			"Remove Role": 
+				{
+					"Description": "Removes Mentioned Role from Mentioned User",
+					"Invoke": ["rrole <Mention Role> <Mention User>"],
+					"Emoji": "heavy_minus_sign",
+					"Info": [""]
+				},
+			"Mass Add Role": 
+				{
+					"Description": "Adds Mentioned Role to All Members",
+					"Invoke": ["marole <Mention Role>"],
+					"Emoji": "ballot_box_with_check",
+					"Info": [""]
+				},
+			"Mass Remove Role": 
+				{
+					"Description": "Removes Mentioned Role from All Members",
+					"Invoke": ["mrrole <Mention Role>"],
+					"Emoji": "no_entry_sign",
+					"Info": [""]
+				},
+			"Ping Role": 
+				{
+					"Description": "Sends your Message in an Embed & Pings the Mentioned Role",
+					"Invoke": ["prole <Mention Role> <Create Message>"],
+					"Emoji": "bell",
+					"Info": [""]
+				},
+			"Hire Role Message": 
+				{
+					"Description": "Sets Message for Hire Role",
+					"Invoke": ["hrole <Mention Role> <Create Message>"],
+					"Emoji": "clipboard",
+					"Info": [""]
+				},
+			"Hire": 
+				{
+					"Description": "Sends Configured Message for Role to Mentioned Member",
+					"Invoke": ["hire <Mention Role> <Mention Member>"],
+					"Emoji": "handshake",
+					"Info": [""]
+				},
+			"Rolemenu": 
+				{
+					"Description": "Rolemenu that Users React to get Corresponding Role",
+					"Invoke": ["rolemenu <Menu Name> <Mention Role 1> <Mention Role 2>"],
+					"Emoji": "alien",
+					"Info": ["(Up to 10 Roles)"]
+				},
+			"Poll": 
+				{
+					"Description": "Creates Poll for Users to Vote On",
+					"Invoke": ["poll <Poll Name> <Choice 1> <Choice 2>"],
+					"Emoji": "scales",
+					"Info": ["(Up to 10 Answers)"]
+				},
+			"Giveaway": 
+				{
+					"Description": "Starts Giveaway in Mentioned Channel for Specified Amount of Time with Specified Amount of Winners for the Specified Prize",
+					"Invoke": ["giveaway <Mention Channel> <Amount of Time> <Amount of Winners> <Prize> <Prize Description>"],
+					"Emoji": "tada",
+					"Info": ["Days: d, Hours: h, Minutes: m, Seconds: s", "The Prize Description is Optional. You Must put Quotes Before & After 2 or More Word Prizes"]
+				},
+			"End Giveaway": 
+				{
+					"Description": "Ends the Specified Giveaway",
+					"Invoke": ["gend <Giveaway Message ID>"],
+					"Emoji": "confetti_ball",
+					"Info": [""]
+				},
+			"Reroll Giveaway": 
+				{
+					"Description": "Rerolls the Specified Giveaway",
+					"Invoke": ["reroll <Giveaway Message ID> <Amount to Reroll>"],
+					"Emoji": "arrows_counterclockwise",
+					"Info": [""]
+				}
+		},
+
+	"(1/2) Auto-Moderation Commands":
+		{
+			"Auto-Mod (Bad Words)": 
+				{
+					"Description": "Turns On Bad Words Auto-Moderation for Channel",
+					"Invoke": ["bwords <Mention Channel>"],
+					"Emoji": "speaking_head",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Auto-Mod (Invites)": 
+				{
+					"Description": "Turns On Discord Invite Auto-Moderation for Channel",
+					"Invoke": ["invites <Mention Channel>"],
+					"Emoji": "paperclip",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Auto-Mod (Links)": 
+				{
+					"Description": "Turns On External Link Auto-Moderation for Channel",
+					"Invoke": ["links <Mention Channel>"],
+					"Emoji": "link",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Auto-Mod (Mentions)": 
+				{
+					"Description": "Turns On Spam Mention Auto-Moderation for Channel",
+					"Invoke": ["mentions <Mention Channel>"],
+					"Emoji": "no_pedestrians",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Auto-Mod (Caps)": 
+				{
+					"Description": "Turns On Excessive Caps Auto-Moderation for Channel",
+					"Invoke": ["caps <Mention Channel>"],
+					"Emoji": "no_entry_sign",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Auto-Mod (Spam)": 
+				{
+					"Description": "Turns On Spam Text Auto-Moderation for Channel",
+					"Invoke": ["spam <Mention Channel>"],
+					"Emoji": "speech_balloon",
+					"Info": ["(If Enabled it will Disable)"]
+				}
+		},
+
+	"(2/2) Auto-Moderation Commands":
+		{
+			"Auto-Role": 
+				{
+					"Description": "Sets Role to Auto-Assign on Join",
+					"Invoke": ["autorole <Mention Role>"],
+					"Emoji": "alien",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Welcome Message": 
+				{
+					"Description": "Sets Welcome Message",
+					"Invoke": ["wmessage <Create Message>"],
+					"Emoji": "notepad_spiral",
+					"Info": ["(Mention Member: %mention, Member Username: %member, Server Name: %server)", "(If Enabled it will Disable)"]
+				},
+			"Welcome Direct Message": 
+				{
+					"Description": "Sets Welcome Direct Message",
+					"Invoke": ["dmessage <Create Message>"],
+					"Emoji": "email",
+					"Info": ["(Mention Member: %mention, Member Username: %member, Server Name: %server)", "(If Enabled it will Disable)"]
+				},
+			"Goodbye Message": 
+				{
+					"Description": "Sets Goodbye Message",
+					"Invoke": ["gmessage <Create Message>"],
+					"Emoji": "hand_splayed",
+					"Info": ["(Mention Member: %mention, Member Username: %member, Server Name: %server)", "(If Enabled it will Disable)"]
+				},
+			"Sticky Message & Channel": 
+				{
+					"Description": "Sets the Sticky Channel & Message",
+					"Invoke": ["sticky <Mention Channel> <Create Message"],
+					"Emoji": "pencil",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Sticky Role Limit": 
+				{
+					"Description": "Sets Limit for Messages per 24 Hours for Mentioned Role in Sticky Channels",
+					"Invoke": ["set <Amount of Messages> <Mention Role>"],
+					"Emoji": "newspaper",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Sticky Channel Logs": 
+				{
+					"Description": "Sets the Channel to Receive Sticky Channel Advertisement Logs in",
+					"Invoke": ["ilog <Mention Channel>"],
+					"Emoji": "chart_with_downwards_trend",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Sticky Reset": 
+				{
+					"Description": "Resets Sticky Channel Limits for the Server",
+					"Invoke": ["reset"],
+					"Emoji": "arrows_counterclockwise",
+					"Info": [""]
+				},
+			"Sticky Member Reset": 
+				{
+					"Description": "Resets Sticky Channel Limits for a Member in the Server",
+					"Invoke": ["mreset <Mention Member>"],
+					"Emoji": "arrows_clockwise",
+					"Info": [""]
+				},
+			"Sticky Member Remove": 
+				{
+					"Description": "Removes Specified Number of Posts from Sticky Channel Limit for a Member in the Server",
+					"Invoke": ["mremove <Amount to Remove> <Mention Member>"],
+					"Emoji": "leftwards_arrow_with_hook",
+					"Info": [""]
+				}
+		},
+
+	"(1/2) Configuration Commands":
+		{
+			"Prefix": 
+				{
+					"Description": "Adds or Removes Prefix from Server's Prefixes",
+					"Invoke": ["prefix <Create Prefix>"],
+					"Emoji": "gear",
+					"Info": [""]
+				},
+			"Mod Log": 
+				{
+					"Description": "Sets the Channel to Receive Moderation Actions Taken",
+					"Invoke": ["log <Mention Channel>"],
+					"Emoji": "clipboard",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Join & Leave Log": 
+				{
+					"Description": "Sets Channel to Receive Join & Leave Logs",
+					"Invoke": ["welcome <Mention Channel>"],
+					"Emoji": "hand_splayed",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Level System Message": 
+				{
+					"Description": "Enables Server Leveling System Mesages",
+					"Invoke": ["levels"],
+					"Emoji": "trophy",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Global Level System Message": 
+				{
+					"Description": "Enables Global Leveling System Mesages",
+					"Invoke": ["glevels"],
+					"Emoji": "globe_with_meridians",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Muted Role": 
+				{
+					"Description": "Sets Muted Role",
+					"Invoke": ["muted <Mention Role>"],
+					"Emoji": "zipper_mouth",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Phone Call Channel": 
+				{
+					"Description": "Sets Channel to Receive Phone Calls in",
+					"Invoke": ["psetup <Mention Channel>"],
+					"Emoji": "alarm_clock",
+					"Info": ["(If Enabled it will Disable)"]
+				}
+		},
+
+	"(2/2) Configuration Commands":
+		{
+			"%bot Announcements": 
+				{
+					"Description": "Sets Channel to Receive %bot's Announcements in",
+					"Invoke": ["updates <Mention Channel>"],
+					"Emoji": "loudspeaker",
+					"Info": ["(If Enabled it will Disable)"]
+				},
+			"Unlink Member's Server Account":
+				{
+					"Description": "Unlinks Specified Member's Server Subscription Account from their Discord Account",
+					"Invoke": ["unlink <Mention Member>"],
+					"Emoji": "unlock",
+					"Info": [""]
+				},
+			"Admin Link Server Account":
+				{
+					"Description": "Links Specified Member's Server Subscription Account to their Discord Account",
+					"Invoke": ["alink <Mention Member> <Email Address>"],
+					"Emoji": "closed_lock_with_key",
+					"Info": [""]
+				},
+			"Server Subscriber Endpoint": 
+				{
+					"Description": "Sets Server's Subscriber Endpoint",
+					"Invoke": ["endpoint <Endpoint URL>"],
+					"Emoji": "beginner",
+					"Info": ["Use %EMAIL to Specify Where to Insert Subscriber Emails"]
+				},
+			"Subscriber Role": 
+				{
+					"Description": "Sets Subscriber Role",
+					"Invoke": ["srole <Mention Role>", "srole <Mention Role> <Subscription Type>"],
+					"Emoji": "busts_in_silhouette",
+					"Info": [""]
+				}
+		},
+
+	"(1/2) Commands for Support":
+		{
+			"Reply": 
+				{
+					"Description": "Sends Support Replies threw %bot's DM's",
+					"Invoke": ["reply <Ticket ID> <Create Message>"],
+					"Emoji": "calling",
+					"Info": [""]
+				},
+			"Eval":
+				{
+					"Description": "Executes Code and Returns the Output",
+					"Invoke": ["eval <Code to Execute>"],
+					"Emoji": "closed_lock_with_key",
+					"Info": [""]
+				},
+			"Approve": 
+				{
+					"Description": "Approves the Mentioned Vouch ID",
+					"Invoke": ["approve <Vouch ID>"],
+					"Emoji": "ballot_box_with_check",
+					"Info": [""]
+				},
+			"Deny": 
+				{
+					"Description": "Denies the Mentioned Vouch ID",
+					"Invoke": ["deny <Vouch ID>"],
+					"Emoji": "no_entry_sign",
+					"Info": [""]
+				},
+			"Generate Krypto iOS Key": 
+				{
+					"Description": "Create or Delete Krypto iOS Mod Key",
+					"Invoke": ["ikey <Key Name>"],
+					"Emoji": "key",
+					"Info": [""]
+				},
+			"Reset Krypto iOS Key": 
+				{
+					"Description": "Reset Krypto iOS Mod Key",
+					"Invoke": ["ireset <Key Name>"],
+					"Emoji": "unlock",
+					"Info": [""]
+				},
+			"Krypto iOS Keys": 
+				{
+					"Description": "Shows All of Krypto's iOS Mod Keys",
+					"Invoke": ["ikrypto"],
+					"Emoji": "scroll",
+					"Info": [""]
+				}
+		},
+
+	"(2/2) Commands for Support":
+		{
+			"Auto-Bump": 
+				{
+					"Description": "Enables Auto-Bump for Mentioned Server ID",
+					"Invoke": ["autobump <Server ID> <User ID>"],
+					"Emoji": "robot",
+					"Info": [""]
+				},
+			"Server List": 
+				{
+					"Description": "Displays All Servers %bot is Currently in",
+					"Invoke": ["servers"],
+					"Emoji": "satellite",
+					"Info": [""]
+				},
+			"Premium Servers": 
+				{
+					"Description": "Displays All Premium Servers",
+					"Invoke": ["pservers"],
+					"Emoji": "gem",
+					"Info": [""]
+				},
+			"Load": 
+				{
+					"Description": "Loads a Cog for %bot",
+					"Invoke": ["load <Mention Cog>"],
+					"Emoji": "white_check_mark",
+					"Info": [""]
+				},
+			"Unload": 
+				{
+					"Description": "Unloads a Cog for %bot",
+					"Invoke": ["unload <Mention Cog>"],
+					"Emoji": "x",
+					"Info": [""]
+				},
+			"Reload": 
+				{
+					"Description": "Reloads a Cog for %bot",
+					"Invoke": ["reload <Mention Cog>"],
+					"Emoji": "arrows_counterclockwise",
+					"Info": [""]
+				},
+			"Restart": 
+				{
+					"Description": "Restarts %bot's Startup Cogs",
+					"Invoke": ["restart"],
+					"Emoji": "repeat",
+					"Info": [""]
+				},
+			"Logout": 
+				{
+					"Description": "Logouts %bot",
+					"Invoke": ["logout"],
+					"Emoji": "hand_splayed",
+					"Info": [""]
+				}
+		}
+}

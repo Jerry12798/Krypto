@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="login" style="height: 100vh; width: 100vh; display: flex;">
+      <div style="width: 50%; border: 3px solid #73AD21; margin: auto; background-color: blue;">
+        <h3 style="text-align: center; color: white;">Krypto | ARKM Mod Menu</h3>
+        <h6 style="text-align: center; color: white;">Join to Buy<br>https://discord.gg/SM35Sfs</h6>
+        <input type="button" value="LOGIN" style="margin: 0 auto; margin-bottom: 0px; border: 3px solid #73AD21; display: block; background-color: green; color: white;" onclick="login()" />
+        <h5 style="text-align: center; color: white;">Designed & Developed by Anonymous Jerry#4513</h5>
+      </div>
+    </div>
+    <!--<div id="login">
+      <div>
+        <input type="button" value="LOGIN" style="top: 50%; bottom: 50%;" onclick="login()" />
+      </div>
+    </div>-->
+    <script>
+      var baseURL = "https://krypto.codes";
+
+      //FingerPrintJSv
+      var fpJS;
+      /*var fpPromise = import("https://openfpcdn.io/fingerprintjs/v3").then(
+        (FingerprintJS) => FingerprintJS.load()*/
+      var fpPromise = import("https://fpjscdn.net/v3/Y6aKLsJ9Pfp7xAQC2UJG").then(
+        (FingerprintJS) => FingerprintJS.load( { apiKey: "Y6aKLsJ9Pfp7xAQC2UJG" } )
+      );
+      fpPromise.then((fp) => (fpJS = fp));
+
+      async function login() {
+        let dev = await fpJS.get();
+        let data = { code: prompt("Enter Your Key!"), udid: dev.visitorId };
+        try {
+          var response = await fetch(`${baseURL}/h5gg`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "UDID": data.udid,
+              "Key": data.code
+            },
+          });
+
+          if (response.status !== 201) {
+            return alert(`Error: ${await response.text()}`);
+          }
+          var json = await response.json();
+          console.log(json)
+          var wrap = document.createElement("div");
+          wrap.innerHTML = json.ui;
+
+          var scr = document.createElement("script");
+          scr.src = `${baseURL}${json.m_src}`;
+          scr.type = "text/javascript";
+          wrap.appendChild(scr);
+
+          document.body.appendChild(wrap);
+
+          var rcs = document.getElementById("PSE");
+          rcs.src = `${baseURL}${json.e_src}`;
+          rcs.type = "text/javascript";
+
+          document.getElementById("login").style.display = "none"
+        } catch (error) {
+          alert(error);
+        }
+      }
+    </script>
+  </body>
+  <script type="text/javascript", id="PSE"></script>
+</html>

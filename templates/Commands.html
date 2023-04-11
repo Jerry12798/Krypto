@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | Commands{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+<h2><p><strong><!--<a href="https://discord.com/oauth2/authorize?client_id={bot_id}&scope=bot&permissions=2146958839">{{bot}}</a>-->{{bot}}'s Commands!</strong></p></h2>
+
+
+{% if data %}
+	{% for category in data %}
+		<h5><strong><u>{{category}}</u></strong></h5>
+		{% for cmd in data[category] %}
+			<strong>{{cmd.replace('%bot', bot)}}</strong>:
+			<em>{{data[category][cmd]['Description'].replace('%bot', bot).replace('%support_server', Bot_Support_Server)}} 
+				{% for info in data[category][cmd]['Info'] %}
+					{{info.replace('%bot', bot)}} 
+				{% endfor %}
+				 | 
+			</em>
+			<code>
+				{% for invoke in data[category][cmd]['Invoke'] %}
+					{{Bot_Prefix}}{{invoke}}
+				{% endfor %}
+			</code><br>
+		{% endfor %}
+		<br><br>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

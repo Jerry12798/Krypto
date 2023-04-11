@@ -1,0 +1,27 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | Discord Bot{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+<h2><p><strong>Welcome to <a href="https://discord.com/oauth2/authorize?client_id=555820515965534208&scope=bot&permissions=2146958839">{{bot}}</a>'s Configuration Dashboard!</p></strong></p></h2>
+
+<br><br><br>
+
+{% if posts %}
+	<div class="Announcements">
+	{% for post in posts %}
+		<a class="Announcements" href="/news/{{posts[post]['_id']}}"><h2><strong class="Post-Title"><u>{{ posts[post]['Title'] }}</u></strong></h2></a>
+		<a class="Announcements" href="/news/{{posts[post]['_id']}}"><h5><strong class="Post-Content">{{ posts[post]['Message'][0:400] }}</strong></h5></a><br>
+		<a class="Announcements" href="/news/{{posts[post]['_id']}}"><em class="Timestamp">{{ posts[post]['Timestamp'].strftime('%B %d, %Y %Z %I:%M%p (UTC)') }}</em></a><br>
+		<a class="Announcements" href="https://discordapp.com/users/{{posts[post]['Member']}}}}"><em class="User"><strong>Posted by:</strong> <img src="{{ posts[post]['Avatar'] }}" width="20" height="20"> {{ posts[post]['Member_Name'] }}</em></a>
+		<br><br><br>
+	{% endfor %}
+	</div>
+{% endif %}
+<br>
+{% endblock %}

@@ -1,0 +1,283 @@
+{% extends "Base.html" %}
+{% block title %}{{bot}} | {{guild}}{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+<h2><p><strong>Welcome to {{guild}}'s Dashboard!</strong></p></h2>
+<img src="{{guild_icon}}" alt="{{guild}}'s Icon">
+
+<br><br><br>
+
+<h5><strong><u>Moderation/Auto-Mod Configuration</u></strong></h5>
+<form method="post">
+	<strong><label for="lcID">Mod Log Channel: </label></strong>
+	<select name="lcID" id="lcID">
+		<option>Select Channel</option>
+		{% if channels %}
+			{% for channel in channels %}
+				{% if channels[channel]['ID'] == data['lcID'] %}
+					<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+				{% endif %}
+				{% if not channels[channel]['ID'] == data['lcID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="jcID">Join/Leave Channel: </label></strong>
+	<select name="jcID" id="jcID">
+		<option>Select Channel</option>
+		{% if channels %}
+			{% for channel in channels %}
+				{% if channels[channel]['ID'] == data['jcID'] %}
+					<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+				{% endif %}
+				{% if not channels[channel]['ID'] == data['jcID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}jcID
+	</select><br>
+	<strong><label for="mrID">Muted Role: </label></strong>
+	<select name="mrID" id="mrID">
+		<option>Select Role</option>
+		{% if roles %}
+			{% for role in role_order %}
+				{% if roles[role]['ID'] == data['mrID'] %}
+					<option value="{{roles[role]['ID']}}" selected>{{roles[role]['Name']}}</option>
+				{% endif %}
+				{% if not roles[role]['ID'] == data['mrID'] %}
+					<option value="{{roles[role]['ID']}}">{{roles[role]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="arID">Auto-Role Role: </label></strong>
+	<select name="arID" id="arID">
+		<option>Select Role</option>
+		{% if roles %}
+			{% for role in role_order %}
+				{% if roles[role]['ID'] == data['arID'] %}
+					<option value="{{roles[role]['ID']}}" selected>{{roles[role]['Name']}}</option>
+				{% endif %}
+				{% if not roles[role]['ID'] == data['arID'] %}
+					<option value="{{roles[role]['ID']}}">{{roles[role]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="ambID">Auto-Mod Bad Words Channel(s): </label></strong>
+	<select name="ambID" id="ambID" class="selectpicker" multiple data-live-search="true">
+		{% if channels %}
+			{% for channel in channels %}
+				{% if data['ambID'] %}
+					{% if channels[channel]['ID'] in data['ambID'] %}
+						<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+					{% endif %}
+					{% if not channels[channel]['ID'] in data['ambID'] %}
+						<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+					{% endif %}
+				{% endif %}
+				{% if not data['ambID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="amiID">Auto-Mod Server Invite Channel(s): </label></strong>
+	<select name="amiID" id="amiID" class="selectpicker" multiple data-live-search="true">
+		{% if channels %}
+			{% for channel in channels %}
+				{% if data['amiID'] %}
+					{% if channels[channel]['ID'] in data['amiID'] %}
+						<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+					{% endif %}
+					{% if not channels[channel]['ID'] in data['amiID'] %}
+						<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+					{% endif %}
+				{% endif %}
+				{% if not data['amiID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="amlID">Auto-Mod Link Channel(s): </label></strong>
+	<select name="amlID" id="amlID" class="selectpicker" multiple data-live-search="true">
+		{% if channels %}
+			{% for channel in channels %}
+				{% if data['amlID'] %}
+					{% if channels[channel]['ID'] in data['amlID'] %}
+						<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+					{% endif %}
+					{% if not channels[channel]['ID'] in data['amlID'] %}
+						<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+					{% endif %}
+				{% endif %}
+				{% if not data['amlID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="ammID">Auto-Mod Mentions Spam Channel(s): </label></strong>
+	<select name="ammID" id="ammID" class="selectpicker" multiple data-live-search="true">
+		{% if channels %}
+			{% for channel in channels %}
+				{% if data['ammID'] %}
+					{% if channels[channel]['ID'] in data['ammID'] %}
+						<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+					{% endif %}
+					{% if not channels[channel]['ID'] in data['ammID'] %}
+						<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+					{% endif %}
+				{% endif %}
+				{% if not data['ammID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="amcID">Auto-Mod Excessive Caps Channel(s): </label></strong>
+	<select name="amcID" id="amcID" class="selectpicker" multiple data-live-search="true">
+		{% if channels %}
+			{% for channel in channels %}
+				{% if data['amcID'] %}
+					{% if channels[channel]['ID'] in data['amcID'] %}
+						<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+					{% endif %}
+					{% if not channels[channel]['ID'] in data['amcID'] %}
+						<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+					{% endif %}
+				{% endif %}
+				{% if not data['amcID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="Prefixes">Server's Prefix(es): </label><br></strong>
+	<textarea name="Prefixes" for="Prefixes" placeholder="Enter Prefix(es) (Seperate Multiple with a Comma)">{% if data['Prefixes'] %}{{ data['Prefixes'] }}{% endif %}</textarea><br>
+	<strong><label for="jlMessage">Server's Welcome/Join Log Message: </label><br></strong>
+	<textarea name="jlMessage" for="jlMessage" placeholder="Create Message (Mention Member: %mention, Member's Username: %member, Server Name: %server)">{% if data['jlMessage'] %}{{ data['jlMessage'] }}{% endif %}</textarea><br>
+	<strong><label for="llMessage">Server's Goodbye/Leave Log Message: </label><br></strong>
+	<textarea name="llMessage" for="llMessage" placeholder="Create Message (Mention Member: %mention, Member's Username: %member, Server Name: %server)">{% if data['llMessage'] %}{{ data['llMessage'] }}{% endif %}</textarea><br>
+	<strong><label for="jdMessage">Server's Welcome/Join DM Message: </label><br></strong>
+	<textarea name="jdMessage" for="jdMessage" placeholder="Create Message (Mention Member: %mention, Member's Username: %member, Server Name: %server)">{% if data['jdMessage'] %}{{ data['jdMessage'] }}{% endif %}</textarea><br>
+	
+	<input type="submit"><br>
+</form>
+
+<br><br><br>
+
+<h5><strong><u>Economy Configuration</u></strong></h5>
+<form method="post">
+	<strong><label for="uStart">User Start Balance: </label></strong>
+	<input type="text" id="uStart" name="uStart" placeholder="Enter Amount for Users to have Upon Applying..." value="{% if data['uStart'] %}{{ data['uStart'] }}{% endif %}"><br>
+	<strong><label for="sStart">Server Start Balance: </label></strong>
+	<input type="text" id="sStart" name="sStart" placeholder="Enter Amount for the Server to have Upon Registering..." value="{% if data['sStart'] %}{{ data['sStart'] }}{% endif %}"><br>
+	<strong><label for="bLimit">Server Bag Limit: </label></strong>
+	<input type="text" id="bLimit" name="bLimit" placeholder="Enter Max Amount of Items Allowed in Bag..." value="{% if data['bLimit'] %}{{ data['bLimit'] }}{% endif %}"><br>
+	<strong><label for="sbLimit">Server Security Box Limit: </label></strong>
+	<input type="text" id="sbLimit" name="sbLimit" placeholder="Enter Max Amount of Items Allowed in Storage Box..." value="{% if data['sbLimit'] %}{{ data['sbLimit'] }}{% endif %}"><br>
+	<input type="submit"><br>
+</form>
+
+<br><br><br>
+
+<h5><strong><u>Bump Configuration</u></strong></h5>
+<form method="post">
+	<strong><label for="sFeed">Bump Feed Channel: </label></strong>
+	<select name="sFeed" id="sFeed">
+		<option>Select Channel</option>
+		{% if channels %}
+			{% for channel in channels %}
+				{% if channels[channel]['ID'] == data['sFeed'] %}
+					<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+				{% endif %}
+				{% if not channels[channel]['ID'] == data['sFeed'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="sInvite">Server's Invite: </label></strong>
+	<input type="url" id="sInvite" name="sInvite" placeholder="Enter Invite URL" value="{% if data['sInvite'] %}{{ data['sInvite'] }}{% endif %}"><br>
+	<strong><label for="sBanner">Server's Banner: </label></strong>
+	<input type="url" id="sBanner" name="sBanner" placeholder="Enter Banner URL" value="{% if data['sBanner'] %}{{ data['sBanner'] }}{% endif %}"><br>
+	<strong><label for="sDescription">Server's Description: </label><br></strong>
+	<textarea name="sDescription" placeholder="Create Server's Description...">{% if data['sDescription'] %}{{ data['sDescription'] }}{% endif %}</textarea><br>
+	<input type="submit"><br>
+</form>
+
+<br><br><br>
+
+<h5><strong><u>Misc Configuration</u></strong></h5>
+<form method="post">
+	<strong><label for="iID">iOS Updates Channel: </label></strong>
+	<select name="iID" id="iID">
+		<option>Select Channel</option>
+		{% if channels %}
+			{% for channel in channels %}
+				{% if channels[channel]['ID'] == data['iID'] %}
+					<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+				{% endif %}
+				{% if not channels[channel]['ID'] == data['iID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="kID">{{bot}} Announcements Channel: </label></strong>
+	<select name="kID" id="kID">
+		<option>Select Channel</option>
+		{% if channels %}
+			{% for channel in channels %}
+				{% if channels[channel]['ID'] == data['kID'] %}
+					<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+				{% endif %}
+				{% if not channels[channel]['ID'] == data['kID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="pID">Phone Call Channel: </label></strong>
+	<select name="pID" id="pID">
+		<option>Select Channel</option>
+		{% if channels %}
+			{% for channel in channels %}
+				{% if channels[channel]['ID'] == data['pID'] %}
+					<option value="{{channels[channel]['ID']}}" selected>{{channels[channel]['Name']}}</option>
+				{% endif %}
+				{% if not channels[channel]['ID'] == data['pID'] %}
+					<option value="{{channels[channel]['ID']}}">{{channels[channel]['Name']}}</option>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</select><br>
+	<strong><label for="sLevels">Server Level Up Messages: </label></strong>
+	{% if data['sLevels'] %}
+		<input type="radio" id="sLevels" name="sLevels" value="Enable" checked> Enable <input type="radio" id="sLevels" name="sLevels" value="Disable"> Disable<br>
+	{% endif %}
+	{% if not data['sLevels'] %}
+		<input type="radio" id="sLevels" name="sLevels" value="Enable"> Enable <input type="radio" id="sLevels" name="sLevels" value="Disable" checked> Disable<br>
+	{% endif %}
+	<strong><label for="gLevels">Global Level Up Messages: </label></strong>
+	{% if data['gLevels'] %}
+		<input type="radio" id="gLevels" name="gLevels" value="Enable" checked> Enable <input type="radio" id="gLevels" name="gLevels" value="Disable"> Disable<br>
+	{% endif %}
+	{% if not data['gLevels'] %}
+		<input type="radio" id="gLevels" name="gLevels" value="Enable"> Enable <input type="radio" id="gLevels" name="gLevels" value="Disable" checked> Disable<br>
+	{% endif %}
+	
+	<input type="submit"><br>
+</form>
+<br>
+{% endblock %}
